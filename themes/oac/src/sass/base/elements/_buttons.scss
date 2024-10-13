@@ -1,0 +1,32 @@
+button,
+.btn,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid var(--color--gold);
+	border-radius: 0;
+	background: var(--color--gold);
+	color: var(--color--dgray);
+	line-height: 1;
+	padding: 0.75rem 1rem;
+	font-size: var(--text-size--s);
+	text-decoration: none;
+	font-weight: 500;
+	text-transform: uppercase;
+	transition: var(--transition--short) ease;
+	cursor: pointer;
+
+	&:visited {
+		color: var(--color--dgray);
+	}
+
+	&:hover {
+		background-color: var(--color--lgold);
+		border-color: var(--color--lgold);
+	}
+
+	&:active,
+	&:focus {
+		background-color: var(--color--gold);
+	}
+}

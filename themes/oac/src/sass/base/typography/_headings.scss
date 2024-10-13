@@ -1,0 +1,30 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: var(--font--alt);
+}
+
+h1, .h1 {
+	font-size: var(--text-size--xl);
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+h2, .h2 {
+	font-size: var(--text-size--l);
+	font-weight: 500;
+}
+
+@include media-breakpoint-up(md) {
+	h1, .h1 {
+		font-size: var(--text-size--h1);
+	}
+
+	h2, .h2 {
+		font-size: var(--text-size--h2);
+	}
+}

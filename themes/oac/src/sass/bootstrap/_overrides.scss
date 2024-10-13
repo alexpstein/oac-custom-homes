@@ -1,0 +1,16 @@
+/*
+Carry over example overrides
+@include media-breakpoint-only(xs) {
+    .container-fluid,
+    .container {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .container-xl {
+        max-width: 1230px;
+    }
+}
+*/

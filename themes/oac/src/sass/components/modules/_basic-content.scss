@@ -1,0 +1,19 @@
+.module--basic-content {
+    padding: 1rem;
+    margin: 0 0 1rem;
+
+    h2:first-child {
+        margin-top: 0;
+    }
+
+    p:last-child,
+    ul:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .module--basic-content {
+        padding: 1.25rem;
+    }
+}
