@@ -124,10 +124,13 @@ class PluginUpdater {
 			return $transient;
 		}
 
+		$res = $this->parse_plugin_info( $result );
+
 		if ( version_compare( $this->properties['plugin_version'], $result->version, '<' ) ) {
-			$res                                 = $this->parse_plugin_info( $result );
 			$transient->response[ $res->plugin ] = $res;
 			$transient->checked[ $res->plugin ]  = $result->version;
+		} else {
+			$transient->no_update[ $res->plugin ] = $res;
 		}
 
 		return $transient;
@@ -197,7 +200,7 @@ class PluginUpdater {
 
 			// Cache the response.
 			update_option( $this->properties['plugin_update_transient_exp_name'], $this->cache_time, false );
-			update_option( $this->properties['plugin_update_transient_name'], $response, $this->cache_time );
+			update_option( $this->properties['plugin_update_transient_name'], $response, false );
 		}
 
 		$decoded_response = json_decode( $response );
