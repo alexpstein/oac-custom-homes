@@ -35,3 +35,39 @@ function oac_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'oac_pingback_header' );
+
+/**
+ * Get full path of images to fix file_get_contents on ACF content
+ */
+function _themename_full_path( $url ) {
+	return realpath( str_replace( get_bloginfo('url'), '.', $url ) );
+}
+
+/**
+ * Clean special characters from strings
+ * Not for seo-friendly text, but useful for generating JS-friendly IDs and classes
+ */
+function _themename_clean_string( $string ) {
+	// remove all non alphanumeric characters except spaces
+	$string_clean = preg_replace( '/[^a-zA-Z0-9\s]/', '', strtolower( $string ) );
+
+	// replace one or multiple spaces into single dash (-)
+	$string_clean = preg_replace( '!\s+!', '-', $string_clean );
+
+	return $string_clean;
+}
+
+/**
+ * Generate random string
+ */
+function _themename_random_string( $length ) {
+	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	$characters_length = strlen($characters);
+	$random_string = '';
+	
+	for ( $i = 0; $i < $length; $i++ ) {
+		$random_string .= $characters[rand(0, $characters_length - 1)];
+	}
+
+	return $random_string;
+}
