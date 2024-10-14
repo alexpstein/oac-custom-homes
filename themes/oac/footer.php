@@ -79,9 +79,28 @@
 				<?php endwhile; ?>
 				</div>
 				<?php endif; ?>
+				<?php if ( have_rows( 'sm_links', 'option' ) ) : ?>
 				<div class="footer__social">
-
+					<nav id="footer-socials" class="footer__social-nav" aria-label="<?php _e( 'Social media links', '_themename' ); ?>">
+						<ul class="footer__social-menu">
+							<?php
+							while ( have_rows( 'sm_links', 'option' ) ) : the_row();
+								$sm_label = sprintf( __( '%s on %s', '_themename' ), get_bloginfo( 'name' ), get_sub_field( 'sm_name' ) );
+								$sm_icon = get_sub_field ( 'sm_icon' );
+								$sm_icon_url = $sm_icon['url'];
+							?>
+								<li class="footer__social-li">
+									<a href="<?php echo esc_attr( get_sub_field('sm_link') ); ?>" class="footer__social-link" aria-label="<?php echo $sm_label; ?>">
+										<?php echo file_get_contents( _themename_full_path( $sm_icon_url ) ); ?>
+									</a>
+								</li>								
+							<?php
+							endwhile; 
+							?>
+						</ul>
+					</nav>
 				</div>
+				<?php endif; ?>
 			</div>
 			<div class="footer__copyright">
 
