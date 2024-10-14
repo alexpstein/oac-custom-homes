@@ -163,3 +163,32 @@ if ( ! function_exists( 'wp_body_open' ) ) :
 		do_action( 'wp_body_open' );
 	}
 endif;
+
+if ( ! function_exists( '_themename_socials' ) ) :
+	/**
+	 * Display social media buttons
+	 */
+	function _themename_socials( $class_var, $aria_label = 'Social media links' ) {
+		if ( have_rows( 'sm_links', 'option' ) ) : ?>
+			<nav id="<?php echo $class_var; ?>-socials" class="<?php echo $class_var; ?>__social-nav" aria-label="<?php _e( $aria_label, '_themename' ); ?>">
+				<ul class="<?php echo $class_var; ?>__social-menu">
+					<?php
+					while ( have_rows( 'sm_links', 'option' ) ) : the_row();
+						$sm_label = sprintf( __( '%s on %s', '_themename' ), get_bloginfo( 'name' ), get_sub_field( 'sm_name' ) );
+						$sm_icon = get_sub_field ( 'sm_icon' );
+						$sm_icon_url = $sm_icon['url'];
+					?>
+						<li class="<?php echo $class_var; ?>__social-li">
+							<a href="<?php echo esc_attr( get_sub_field('sm_link') ); ?>" class="<?php echo $class_var; ?>__social-link" aria-label="<?php echo $sm_label; ?>">
+								<?php echo file_get_contents( _themename_full_path( $sm_icon_url ) ); ?>
+							</a>
+						</li>								
+					<?php
+					endwhile; 
+					?>
+				</ul>
+			</nav>
+		<?php
+		endif; 
+	}
+endif;
