@@ -17,6 +17,7 @@ h1, .h1 {
 h2, .h2 {
 	font-size: var(--text-size--l);
 	font-weight: 500;
+	margin: 0 0 .75em;
 }
 
 @include media-breakpoint-up(md) {

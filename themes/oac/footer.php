@@ -17,7 +17,7 @@
 				<div class="footer__nav-wrapper">
 					<h2 class="footer__header"><?php _e( 'Site Map', '_themename' ); ?></h2>
 					<nav id="footer-nav" class="footer__nav" aria-label="<?php _e( 'Site Map', '_themename' ); ?>">
-						<ul class="menu footer-nav-menu">
+						<ul class="menu footer__nav-menu">
 							<?php
 							wp_nav_menu(
 								array(
@@ -43,7 +43,7 @@
 
 						if ( ! empty( $contact_addr ) ) :
 					?>
-						<div class="footer__contact-addr">
+						<div class="footer__contact-addr footer__contact-flex">
 							<div class="footer__contact-i" aria-hidden="true">
 								<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-address.svg' ); ?>
 							</div>
@@ -55,7 +55,7 @@
 						endif;
 						if ( ! empty ( $contact_phone ) ) :
 					?>
-						<div class="footer__contact-phone">
+						<div class="footer__contact-phone footer__contact-flex">
 							<div class="footer__contact-i" aria-hidden="true">
 								<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-phone.svg' ); ?>
 							</div>
@@ -67,7 +67,7 @@
 						endif;
 						if ( ! empty ( $contact_email ) ) :
 					?>
-						<div class="footer__contact-email">
+						<div class="footer__contact-email footer__contact-flex">
 							<div class="footer__contact-i" aria-hidden="true">
 								<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-email.svg' ); ?>
 							</div>
