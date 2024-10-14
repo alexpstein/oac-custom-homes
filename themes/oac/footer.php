@@ -48,7 +48,7 @@
 								<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-address.svg' ); ?>
 							</div>
 							<div class="footer__contact-text">
-								<?php echo $contact_addr; ?>
+								<?php echo wpautop( $contact_addr ); ?>
 							</div>
 						</div>
 					<?php
@@ -60,7 +60,7 @@
 								<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-phone.svg' ); ?>
 							</div>
 							<div class="footer__contact-text">
-								<?php echo $contact_phone; ?>
+								<?php echo wpautop( $contact_phone ); ?>
 							</div>
 						</div>
 					<?php
@@ -72,15 +72,15 @@
 								<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-email.svg' ); ?>
 							</div>
 							<div class="footer__contact-text">
-								<?php echo '<a href="' . esc_url( 'mailto:' . antispambot( $contact_email ) ) . '">' . esc_html( antispambot( $contact_email ) ) . '</a>'; ?>
+								<?php echo wpautop( '<a href="' . esc_url( 'mailto:' . antispambot( $contact_email ) ) . '">' . esc_html( antispambot( $contact_email ) ) . '</a>' ); ?>
 							</div>
 						</div>
 					<?php endif; ?>
 				<?php endwhile; ?>
 				</div>
 				<?php endif; ?>
-				<?php if ( have_rows( 'sm_links', 'option' ) ) : ?>
 				<div class="footer__social">
+					<?php if ( have_rows( 'sm_links', 'option' ) ) : ?>
 					<nav id="footer-socials" class="footer__social-nav" aria-label="<?php _e( 'Social media links', '_themename' ); ?>">
 						<ul class="footer__social-menu">
 							<?php
@@ -99,11 +99,23 @@
 							?>
 						</ul>
 					</nav>
+					<?php
+					endif; 
+					if ( ! empty ( get_field( 'footer_logo', 'option' ) ) ) :
+						$footer_logo = get_field( 'footer_logo', 'option' );
+						$footer_logo_retina = get_field ( 'footer_logo_retina', 'option' );
+						$footer_logo_alt = sprintf( __( '%s home page', '_themename' ), get_bloginfo( 'name' ) );
+					?>
+					<a href="<?php echo get_bloginfo( 'url' ); ?>" class="footer__logo-link">
+						<img src="<?php echo $footer_logo['url']; ?>" srcset="<?php echo $footer_logo['url'] . ' 1x, ' . $footer_logo_retina . ' 2x '; ?>" class="footer__logo" alt="<?php echo $footer_logo_alt; ?>">
+					</a>
+					<?php
+					endif;
+					?>
 				</div>
-				<?php endif; ?>
 			</div>
 			<div class="footer__copyright">
-
+				<?php echo wpautop( str_replace( '%year%', date('Y'), get_field( 'site_copyright', 'option' ) ) ); ?>
 			</div>
 		</div>
 	</footer><!-- #footer-main -->
