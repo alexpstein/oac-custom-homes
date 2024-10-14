@@ -14,71 +14,73 @@
 	<footer id="footer-main" class="footer">
 		<div class="container-xl">
 			<div class="footer__main">
-				<div class="footer__nav-wrapper">
-					<h2 class="footer__header"><?php _e( 'Site Map', '_themename' ); ?></h2>
-					<nav id="footer-nav" class="footer__nav" aria-label="<?php _e( 'Site Map', '_themename' ); ?>">
-						<ul class="menu footer__nav-menu">
-							<?php
-							wp_nav_menu(
-								array(
-									'container' => '',
-									'items_wrap' => '%3$s',
-									'theme_location' => 'menu-footer'
-								)
-							);
-							?>
-						</ul>
-					</nav>
-				</div>
-				<?php if ( have_rows( 'contact_information', 'option' ) ) : ?>
-				<div class="footer__contact">
-					<h2 class="footer__header"><?php _e( 'Contact', '_themename' ); ?></h2>
-					
-					<?php while ( have_rows( 'contact_information', 'option' ) ): the_row();
+				<div class="footer__sm-left">
+					<div class="footer__nav-wrapper">
+						<h2 class="footer__header"><?php _e( 'Site Map', '_themename' ); ?></h2>
+						<nav id="footer-nav" class="footer__nav" aria-label="<?php _e( 'Site Map', '_themename' ); ?>">
+							<ul class="menu footer__nav-menu">
+								<?php
+								wp_nav_menu(
+									array(
+										'container' => '',
+										'items_wrap' => '%3$s',
+										'theme_location' => 'menu-footer'
+									)
+								);
+								?>
+							</ul>
+						</nav>
+					</div>
+					<?php if ( have_rows( 'contact_information', 'option' ) ) : ?>
+					<div class="footer__contact">
+						<h2 class="footer__header"><?php _e( 'Contact', '_themename' ); ?></h2>
+						
+						<?php while ( have_rows( 'contact_information', 'option' ) ): the_row();
 
-						// Get sub fields
-						$contact_addr = get_sub_field( 'contact_address' );
-						$contact_phone = get_sub_field( 'contact_phone_numbers' );
-						$contact_email = get_sub_field( 'contact_email' );
+							// Get sub fields
+							$contact_addr = get_sub_field( 'contact_address' );
+							$contact_phone = get_sub_field( 'contact_phone_numbers' );
+							$contact_email = get_sub_field( 'contact_email' );
 
-						if ( ! empty( $contact_addr ) ) :
-					?>
-						<div class="footer__contact-addr footer__contact-flex">
-							<div class="footer__contact-i" aria-hidden="true">
-								<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-address.svg' ); ?>
+							if ( ! empty( $contact_addr ) ) :
+						?>
+							<div class="footer__contact-addr footer__contact-flex">
+								<div class="footer__contact-i" aria-hidden="true">
+									<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-address.svg' ); ?>
+								</div>
+								<div class="footer__contact-text">
+									<?php echo wpautop( $contact_addr ); ?>
+								</div>
 							</div>
-							<div class="footer__contact-text">
-								<?php echo wpautop( $contact_addr ); ?>
+						<?php
+							endif;
+							if ( ! empty ( $contact_phone ) ) :
+						?>
+							<div class="footer__contact-phone footer__contact-flex">
+								<div class="footer__contact-i" aria-hidden="true">
+									<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-phone.svg' ); ?>
+								</div>
+								<div class="footer__contact-text">
+									<?php echo wpautop( $contact_phone ); ?>
+								</div>
 							</div>
-						</div>
-					<?php
-						endif;
-						if ( ! empty ( $contact_phone ) ) :
-					?>
-						<div class="footer__contact-phone footer__contact-flex">
-							<div class="footer__contact-i" aria-hidden="true">
-								<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-phone.svg' ); ?>
+						<?php
+							endif;
+							if ( ! empty ( $contact_email ) ) :
+						?>
+							<div class="footer__contact-email footer__contact-flex">
+								<div class="footer__contact-i" aria-hidden="true">
+									<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-email.svg' ); ?>
+								</div>
+								<div class="footer__contact-text">
+									<?php echo wpautop( '<a href="' . esc_url( 'mailto:' . antispambot( $contact_email ) ) . '">' . esc_html( antispambot( $contact_email ) ) . '</a>' ); ?>
+								</div>
 							</div>
-							<div class="footer__contact-text">
-								<?php echo wpautop( $contact_phone ); ?>
-							</div>
-						</div>
-					<?php
-						endif;
-						if ( ! empty ( $contact_email ) ) :
-					?>
-						<div class="footer__contact-email footer__contact-flex">
-							<div class="footer__contact-i" aria-hidden="true">
-								<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-email.svg' ); ?>
-							</div>
-							<div class="footer__contact-text">
-								<?php echo wpautop( '<a href="' . esc_url( 'mailto:' . antispambot( $contact_email ) ) . '">' . esc_html( antispambot( $contact_email ) ) . '</a>' ); ?>
-							</div>
-						</div>
+						<?php endif; ?>
+					<?php endwhile; ?>
+					</div>
 					<?php endif; ?>
-				<?php endwhile; ?>
 				</div>
-				<?php endif; ?>
 				<div class="footer__social">
 					<?php if ( have_rows( 'sm_links', 'option' ) ) : ?>
 					<nav id="footer-socials" class="footer__social-nav" aria-label="<?php _e( 'Social media links', '_themename' ); ?>">
