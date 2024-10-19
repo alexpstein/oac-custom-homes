@@ -233,7 +233,7 @@
 			transition: .25s ease opacity;
 			opacity: 0;
 			display: block;
-			top: 100%;
+			top: calc(100% - 1px);
 			left: -999em;
 			padding: .75em 1em;
 			min-width: 200px;
@@ -264,11 +264,11 @@
 			justify-content: flex-end;
 
 			li.top-level-menu-item {
-				margin: .5em 1em -.5em 0;
-				padding-bottom: calc(.5em - 1px);
+				margin: 0.325em 1em -0.625em 0;
+				padding-bottom: .5em;
 				
 				&:last-child {
-					margin-right: 1.75em;
+					margin-right: 1.25em;
 				}
 			}
 
@@ -339,8 +339,7 @@
 		height: 36px;
 		padding: 4px;
 		border-radius: 2px;
-		margin: 0;
-		// border: 1px solid rgba(#5d5d5d, .3);
+		margin: 2px 0 0;
 
 		span {
 			width: 28px;
