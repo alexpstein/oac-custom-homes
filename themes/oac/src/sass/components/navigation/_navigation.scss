@@ -75,7 +75,7 @@
 		}
 	}
 	
-	@include media-breakpoint-down(md) {
+	@include media-breakpoint-down(lg) {
 		&__container {
 			display: flex;
 			flex-direction: column;
@@ -97,7 +97,7 @@
 		&.toggled {
 			.main-navigation__container {
 				left: 0;
-				box-shadow: -2px 0 7px rgba(0,0,0,.2);
+				box-shadow: -2px 0 9px rgba(0,0,0,.4);
 			}
 		}
 
