@@ -270,6 +270,27 @@
 				&:last-child {
 					margin-right: 1.25em;
 				}
+
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					background: var(--color--red);
+					height: 3px;
+					width: 0;
+					transition: var(--transition--short) ease all;
+				}
+
+				&:hover {
+					&:after {
+						width: 100%;
+						left: 0;
+						transform: translateX(0);
+					}
+				}
 			}
 
 			a {
