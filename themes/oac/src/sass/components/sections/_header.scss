@@ -1,7 +1,8 @@
 .site-header {
     background: #fff;
     box-shadow: 0 4px 4px 0 rgba(0,0,0,.15);
-    padding: 1em 0;
+    padding: .625em 0;
+    min-height: var(--nav-height); // whole number of px
     position: fixed;
     top: 0;
     left: 0;
@@ -15,6 +16,21 @@
 
 html {
     margin-top: calc(var(--wp-admin--admin-bar--height, 0px) + var(--nav-height)) !important; // Height of mobile menu
+}
+
+h1.site-title,
+p.site-title {
+    margin: 0;
+    font-size: var(--text-size--m);
+
+    a {
+        display: inline-block;
+    }
+}
+
+.logo {
+    display: block;
+    max-width: 167px;
 }
 
 @media screen and (max-width: 600px) {
