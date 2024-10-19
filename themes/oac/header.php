@@ -46,29 +46,44 @@
 	<header id="masthead" class="site-header<?php if ( is_admin_bar_showing() ) { echo ' site-header--admin-bar'; }; ?>">
 		<div class="container-xl">
 			<div class="row">
-				<div class="col-8">
+				<div class="col-8 col-lg-4">
 					<div class="site-branding">
 						<?php
 						$custom_logo_id = get_theme_mod( 'custom_logo' );
 						$logo = wp_get_attachment_image_src( $custom_logo_id, 'full' );
 						
 						if ( is_front_page() ) : ?>
-							<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo $logo[0]; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" class="logo"></a></h1>
+							<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo $logo[0]; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" class="logo logo--navbar"></a></h1>
 						<?php
 						else : 
 						$logo_alt = sprintf( __( 'Go to %s home page', '_themename' ), get_bloginfo( 'name' ) );	
 						?>
-							<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo $logo[0]; ?>" alt="<?php echo $logo_alt; ?>" class="logo"></a></p>
+							<p class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><img src="<?php echo $logo[0]; ?>" alt="<?php echo $logo_alt; ?>" class="logo logo--navbar"></a></p>
 						<?php endif; ?>
 					</div>
 				</div>
-				<div class="col-4">
+				<div class="col-4 col-lg-8">
 					<div id="site-navigation" class="main-navigation">
+						<nav class="main-navigation__featured" aria-label="<?php _e( 'Featured Links', '_themename' ); ?>">
+							<ul id="featured-menu" class="main-navigation__feat-menu menu">
+								<?php
+								wp_nav_menu(
+									array(
+										'container' => '',
+										'items_wrap' => '%3$s',
+										'theme_location' => 'menu-2',
+										'walker' => new Nav_Walker_Nav_Menu()
+									)
+								);
+								?>
+							</ul>
+						</nav>
 
 						<button class="menu-toggle" aria-controls="main-menu-dialog" aria-expanded="false">
 							<span></span>
 							<span></span>
-							<span class="menu-toggle__text"><?php esc_html_e( 'Menu', '_themename' ); ?></span>
+							<span class="menu-toggle__text d-lg-none"><?php esc_html_e( 'Menu', '_themename' ); ?></span>
+							<span class="menu-toggle__text d-none d-lg-block"><?php esc_html_e( 'More', '_themename' ); ?></span>
 						</button>
 
 						<div class="main-navigation__container" id="main-menu-dialog" role="dialog" aria-label="<?php _e( 'Main Navigation', '_themename' ); ?>">
@@ -80,8 +95,8 @@
 								</button>
 							</div>
 							
-							<nav class="main-navigation__nav">
-								<ul id="primary-menu" class="menu">
+							<nav class="main-navigation__nav" aria-label="<?php _e( 'Main', '_themename' ); ?>">
+								<ul id="primary-menu" class="main-navigation__menu menu">
 									<?php
 									wp_nav_menu(
 										array(

@@ -59,9 +59,6 @@ class Nav_Walker_Nav_Menu extends Walker_Nav_Menu {
         // Get any additional anchor link classes from ACF
         $link_classes = get_field( 'link_classes', $item->ID );
 
-        // Check if link should open modal
-        $modal = get_field( 'opens_modal', $item->ID );
-
         $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
         $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
         $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
@@ -70,22 +67,19 @@ class Nav_Walker_Nav_Menu extends Walker_Nav_Menu {
         if ( 'menu-1' == $args->theme_location && 0 != $depth ) {
         	$attributes .= ' tabindex="-1" ';
         }
-        if ( $modal ) {
-            $attributes .= ' data-toggle="modal" ';
-        }
 
         $item_output = $args->before;
         $item_output .= '<a'. $attributes .'>';
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
         $item_output .= '</a>';
         // Add sub-menu toggle buttons
-        if ( 'menu-1' == $args->theme_location ) {
+        if ( 'menu-1' == $args->theme_location || 'menu-2' == $args->theme_location ) {
             $submenus = 0 == $depth || 1 == $depth || 2 == $depth ? get_posts( array( 'post_type' => 'nav_menu_item', 'numberposts' => 1, 'meta_query' => array( array( 'key' => '_menu_item_menu_item_parent', 'value' => $item->ID, 'fields' => 'ids' ) ) ) ) : false;
             if ( ! empty($submenus) ) {
                 if ( 0 == $depth ) {
-                    $item_output .= '<button class="sub-menu-toggle sub-menu-toggle-top" aria-expanded="false" aria-haspopup="true" aria-label="Toggle ' . apply_filters( 'the_title', $item->title, $item->ID ) . ' Sub-Menu">&#43;</button>';
+                    $item_output .= '<button class="sub-menu-toggle sub-menu-toggle-top" aria-expanded="false" aria-label="Toggle ' . apply_filters( 'the_title', $item->title, $item->ID ) . ' Sub-Menu">&#43;</button>';
                 } else if ( $depth > 0 && $depth < 2 ) {
-                    $item_output .= '<button class="sub-menu-toggle" aria-expanded="false" aria-haspopup="true" tabindex="-1" aria-label="Toggle ' . apply_filters( 'the_title', $item->title, $item->ID ) . ' Sub-Menu">&#43;</button>';
+                    $item_output .= '<button class="sub-menu-toggle" aria-expanded="false" tabindex="-1" aria-label="Toggle ' . apply_filters( 'the_title', $item->title, $item->ID ) . ' Sub-Menu">&#43;</button>';
                 }
             }
         }
