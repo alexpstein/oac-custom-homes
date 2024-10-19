@@ -2,20 +2,6 @@
     background: #fff;
     box-shadow: 0 4px 4px 0 rgba(0,0,0,.15);
     padding: .625em 0;
-    min-height: var(--nav-height); // whole number of px
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-
-    &--admin-bar {
-        top: var(--wp-admin--admin-bar--height); // Height of admin bar
-    }
-}
-
-html {
-    margin-top: calc(var(--wp-admin--admin-bar--height, 0px) + var(--nav-height)) !important; // Height of mobile menu
 }
 
 h1.site-title,
@@ -36,5 +22,40 @@ p.site-title {
 @media screen and (max-width: 600px) {
     html #wpadminbar {
         position: fixed;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .site-header {
+        min-height: var(--nav-height); // whole number of px
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+
+        &--admin-bar {
+            top: var(--wp-admin--admin-bar--height); // Height of admin bar
+        }
+    }
+
+    html {
+        margin-top: calc(var(--wp-admin--admin-bar--height, 0px) + var(--nav-height)) !important; // Height of mobile menu
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .site-header {
+        max-width: 992px;
+        margin: 2.5em auto 0;
+        padding: 0;
+        min-height: auto;
+        box-shadow: none;
+        border: 1px solid black; // temp
+    }
+
+    .logo--navbar {
+        max-width: 300px;
+        margin: -1.675em 0 -.5em;
     }
 }
