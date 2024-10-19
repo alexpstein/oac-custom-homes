@@ -26,12 +26,13 @@
  // Mobile
  function closeMobileMenu() {
      jQuery('#site-navigation').removeClass('toggled');
-     menuToggle.attr('aria-expanded', 'false');
+     menuToggle.attr('aria-expanded', 'false').focus();
      jQuery('.sub-menu-toggle').removeClass('toggled').attr('aria-expanded', 'false').html('&#43;');
      jQuery('.top-level-menu-item').removeClass('toggled');
      jQuery('.sub-menu--expand').slideUp();
      jQuery('.sub-menu a').attr('tabindex', '-1');
      jQuery('.sub-menu-toggle:not(.sub-menu-toggle-top)').attr('tabindex', '-1');
+
  }
  
  /**
@@ -75,7 +76,7 @@
      jQuery(document).off('keyup');
  
      jQuery(document).on('keyup', function(e) {
-         if (e.keyCode == 27 && jQuery('#site-navigation').hasClass('toggled')) {
+         if (e.keyCode === 27 && jQuery('#site-navigation').hasClass('toggled')) {
              closeMobileMenu();
          }
      });
@@ -135,6 +136,7 @@
              if ( jQuery(this).closest('ul').hasClass('main-navigation__menu') ) {
                 jQuery(this).attr('aria-expanded', 'false').html('&#43;');
                 jQuery(this).next('.sub-menu').slideToggle();
+                menuToggle.focus();
              }
          }
      });
@@ -145,14 +147,16 @@
      jQuery(document).off('keyup');
  
      jQuery(document).on('keyup', function(e) {
-         if (e.keyCode == 27 && jQuery('.top-level-menu-item').hasClass('active') || e.keyCode == 27 && jQuery('.main-navigation').hasClass('toggled')) {
+         if (e.keyCode === 27 && jQuery('.top-level-menu-item').hasClass('active') || e.keyCode === 27 && jQuery('.main-navigation').hasClass('toggled')) {
              closeMenu();
+             menuToggle.focus();
          }
      });
 
      // Slideout menu
      jQuery('.main-navigation__close').on('click', function(e) {
         closeMenu();
+        menuToggle.focus();
      });
  }
  

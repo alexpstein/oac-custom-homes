@@ -6,6 +6,7 @@
  */
 ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
+	const menuDialog = document.getElementById('main-menu-dialog');
 
 	// Return early if the navigation doesn't exist.
 	if ( ! siteNavigation ) {
@@ -39,6 +40,9 @@
 			button.setAttribute( 'aria-expanded', 'false' );
 		} else {
 			button.setAttribute( 'aria-expanded', 'true' );
+			// Set and trap focus in dialog
+			trapFocus( menuDialog );
+			setInitialFocus( menuDialog );
 		}
 	} );
 
@@ -94,6 +98,42 @@
 				}
 			}
 			menuItem.classList.toggle( 'focus' );
+		}
+	}
+
+	/**
+	 * Trap focus in main navigation dialog
+	 */
+	function getFocusableElements(dialog) {
+		return dialog.querySelectorAll('a[href], button');
+	}
+
+	function trapFocus(dialog) {
+		const focusableElements = getFocusableElements(dialog);
+		const firstFocusable = focusableElements[0];
+		const lastFocusable = focusableElements[focusableElements.length - 1];
+
+		dialog.addEventListener('keydown', function(e) {
+			if (e.key === 'Tab' || e.keyCode === 9) {
+				if (e.shiftKey) {
+					if (document.activeElement === firstFocusable) {
+						e.preventDefault();
+						lastFocusable.focus();
+					}
+				} else {
+					if (document.activeElement === lastFocusable) {
+						e.preventDefault();
+						firstFocusable.focus();
+					}
+				}
+			}
+		});
+	}
+
+	function setInitialFocus(dialog) {
+		const focusableElements = getFocusableElements(dialog);
+		if (focusableElements.length > 0) {
+			focusableElements[0].focus();
 		}
 	}
 }() );
