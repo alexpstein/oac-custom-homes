@@ -12,7 +12,7 @@
 ?>
 
 	<footer id="footer-main" class="footer">
-		<div class="container-xl">
+		<div class="container-lg">
 			<div class="footer__main">
 				<div class="footer__sm-left">
 					<div class="footer__nav-wrapper">
