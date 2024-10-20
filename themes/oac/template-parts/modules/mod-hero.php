@@ -18,4 +18,4 @@ $hero_bg = get_sub_field('hero_bg_image');
         </div>
     </div>
 </div>
-<?php if ( get_sub_field('display_down_arrow') ) echo '<a id="#article-body"></a>';
+<?php if ( get_sub_field('display_down_arrow') ) echo '<a id="article-body"></a>';
