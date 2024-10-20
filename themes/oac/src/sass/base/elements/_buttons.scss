@@ -33,6 +33,11 @@ input[type="submit"] {
 	&:visited {
 		color: var(--color--dgray);
 	}
+
+	&:hover,
+	&:focus {
+		color: var(--color--dgray);
+	}
 }
 
 .btn.btn--white {
