@@ -1,6 +1,12 @@
-.module--basic-content {
-    padding: 1rem;
+.basic-content {
+    padding: .5rem 0 1rem;
     margin: 0 0 1rem;
+    text-align: center;
+
+    p {
+        font-size: var(--text-size--s);
+        line-height: var(--body-line-height);
+    }
 
     h2:first-child {
         margin-top: 0;
@@ -10,10 +16,14 @@
     ul:last-child {
         margin-bottom: 0;
     }
+
+    .container-lg {
+        max-width: 800px !important;
+    }
 }
 
 @include media-breakpoint-up(md) {
-    .module--basic-content {
-        padding: 1.25rem;
+    .basic-content {
+        padding: 1.25rem 0 1.75rem;
     }
 }
