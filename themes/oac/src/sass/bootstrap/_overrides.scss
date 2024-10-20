@@ -6,6 +6,12 @@
     }
 }
 
+@include media-breakpoint-up(lg) {
+    .container-lg {
+        max-width: 992px;
+    }
+}
+
 @include media-breakpoint-up(xl) {
     .container-xl {
         max-width: 1230px;
