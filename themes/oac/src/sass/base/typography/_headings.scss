@@ -9,23 +9,13 @@ h6 {
 }
 
 h1, .h1 {
-	font-size: var(--text-size--xl);
+	font-size: var(--text-size--h1);
 	font-weight: 500;
 	line-height: 1.2;
 }
 
 h2, .h2 {
-	font-size: var(--text-size--l);
+	font-size: var(--text-size--h2);
 	font-weight: 500;
 	margin: 0 0 .75em;
-}
-
-@include media-breakpoint-up(md) {
-	h1, .h1 {
-		font-size: var(--text-size--h1);
-	}
-
-	h2, .h2 {
-		font-size: var(--text-size--h2);
-	}
 }
