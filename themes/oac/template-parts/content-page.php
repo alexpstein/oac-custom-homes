@@ -10,26 +10,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	<?php
+	if ( have_rows('modules') ) :
+		while ( have_rows('modules') ) : the_row();
+			include( locate_template('template-parts/modules/mod-' . get_row_layout() . '.php', false) );
+		endwhile;
+	endif;
 
-	<?php oac_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'oac' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<?php if ( get_edit_post_link() ) : ?>
+	
+	if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php
 			edit_post_link(
