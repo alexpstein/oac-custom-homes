@@ -28,3 +28,9 @@
     --transition--long: .75s;
     --nav-height: 65px;
 }
+
+@media screen and (min-width: 992px) {
+    :root {
+        --text-size--h1: 1.875rem; // 30px   
+    }
+}
