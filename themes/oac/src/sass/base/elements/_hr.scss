@@ -1,6 +1,9 @@
 hr {
-	background-color: $color__background-hr;
+	background-image: url(../images/filigree.svg);
+	background-position: 50% 50%;
+	background-size: 234px;
+	background-repeat: no-repeat;
 	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+	height: 15px;
+	margin: 1.5em auto 1.5em;
 }
