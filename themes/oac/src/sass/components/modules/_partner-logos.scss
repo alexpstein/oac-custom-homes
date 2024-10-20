@@ -1,0 +1,49 @@
+.partner-logos {
+    background-color: var(--color--gold);
+    padding: 1.5em 0 1.5em;
+
+    &__heading {
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+    }
+
+    &__flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 325px;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        flex-basis: 150px;
+        margin-top: 1em;
+
+        @media screen and (max-width: 374px) {
+            flex-basis: 130px;
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .partner-logos {
+        &__flex {
+            max-width: 550px;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .partner-logos {
+        &__flex {
+            max-width: 790px;
+        }
+
+        &__logo {
+            flex-basis: 210px;
+        }
+    }
+}
