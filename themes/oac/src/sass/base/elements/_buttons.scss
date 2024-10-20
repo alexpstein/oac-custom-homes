@@ -16,10 +16,6 @@ input[type="submit"] {
 	transition: var(--transition--short) ease;
 	cursor: pointer;
 
-	&:visited {
-		color: var(--color--dgray);
-	}
-
 	&:hover {
 		background-color: var(--color--lgold);
 		border-color: var(--color--lgold);
@@ -28,5 +24,26 @@ input[type="submit"] {
 	&:active,
 	&:focus {
 		background-color: var(--color--gold);
+	}
+}
+
+.btn {
+	display: inline-block;
+
+	&:visited {
+		color: var(--color--dgray);
+	}
+}
+
+.btn.btn--white {
+	background-color: rgba(#fff, .85);
+	border: 1px solid #fff;
+	padding: .5rem .75rem;
+	color: var(--color--mgray);
+	transition: var(--transition--short) ease background-color;
+
+	&:hover,
+	&:focus {
+		background-color: rgba(#fff, 1);
 	}
 }
