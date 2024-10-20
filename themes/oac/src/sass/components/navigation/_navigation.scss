@@ -233,7 +233,7 @@
 			transition: .25s ease opacity;
 			opacity: 0;
 			display: block;
-			top: calc(100% - 1px);
+			top: calc(100% - 2px);
 			left: -999em;
 			padding: .75em 1em;
 			min-width: 200px;
@@ -299,8 +299,6 @@
 			}
 
 			.sub-menu {
-				border: 1px solid black; //temp
-
 				li {
 					margin: 0;
 				}

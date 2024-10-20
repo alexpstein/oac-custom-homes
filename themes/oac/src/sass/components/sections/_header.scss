@@ -51,7 +51,9 @@ p.site-title {
         padding: 0;
         min-height: auto;
         box-shadow: none;
-        border: 1px solid black; // temp
+        position: relative;
+        z-index: 9999;
+        background-color: rgba(#fff, .85);
     }
 
     .logo--navbar {
