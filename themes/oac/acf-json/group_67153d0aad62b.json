@@ -373,6 +373,81 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_671d144a03ac8": {
+                    "key": "layout_671d144a03ac8",
+                    "name": "contact_form",
+                    "label": "Contact Form",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_671d146703aca",
+                            "label": "Heading",
+                            "name": "heading",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_671d147403acb",
+                            "label": "Body Text",
+                            "name": "body_text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_671d149003acc",
+                            "label": "Form ID",
+                            "name": "form_id",
+                            "aria-label": "",
+                            "type": "number",
+                            "instructions": "The ID of the contact form you want to use can be found by going to \"Forms\" in the admin panel then checking the value of the \"ID\" column.",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "min": "",
+                            "max": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "step": 1,
+                            "prepend": "",
+                            "append": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -400,5 +475,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1729457295
+    "modified": 1729959230
 }
