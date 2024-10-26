@@ -1,0 +1,103 @@
+.contact-form {
+    padding: 1.25rem 0 1.25rem;
+
+    .container-lg {
+        max-width: 800px !important;
+    }
+
+    &__heading {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        font-size: var(--text-size--s);
+        line-height: var(--body-line-height);
+
+        &.contact-form__req {
+            text-align: left;
+            font-size: var(--text-size--xs);
+        }
+    }
+
+    &__req-ast {
+        color: var(--color--red);
+    }
+
+    label.gform-field-label {
+        font-weight: normal;
+        color: var(--color--text);
+    }
+
+    .gfield_required_text {
+        color: var(--color--red);
+    }
+
+    .gform-theme--framework {
+        .gform_confirmation_message {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .gform_validation_errors {
+            background-color: rgba(var(--color--red-rgb), .06);
+            border: 1px solid rgba(var(--color--red-rgb), .4);
+
+            .gform_submission_error {
+                color: var(--color--red);
+            }
+        }
+
+        .gfield_validation_message {
+            color: var(--color--red);
+        }
+    }
+
+    .gform-theme--foundation {
+        .gform_fields {
+            gap: 1.25rem;
+        }
+
+        .gfield_label {
+            margin-bottom: .25rem;
+        }
+
+        .gfield {
+            input {
+                background-color: #eee;
+                border: 1px solid var(--color--dgray);
+                border-radius: 0;
+            }
+        }
+
+        textarea {
+            background-color: #eee;
+                border: 1px solid var(--color--dgray);
+                border-radius: 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .contact-form {
+        .gform-theme--foundation {
+            .gfield--two-thirds {
+                grid-column: 1 / 8;
+            }
+    
+            .gfield--one-third {
+                grid-column: 8 / 13;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .contact-form {
+        padding: 1.25rem 0 2rem;
+
+        p {
+            font-size: var(--text-size--m);
+        }
+    }
+}

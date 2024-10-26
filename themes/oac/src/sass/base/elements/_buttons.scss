@@ -52,3 +52,27 @@ input[type="submit"] {
 		background-color: rgba(#fff, 1);
 	}
 }
+
+/* Gravity Forms overrides */
+.gform_footer input:is([type="submit"]).gform_button {
+	border: 1px solid var(--color--gold) !important;
+	border-radius: 0 !important;
+	background: var(--color--gold) !important;
+	color: var(--color--dgray) !important;
+	line-height: 1 !important;
+	padding: 0.75rem 1rem !important;
+	font-size: var(--text-size--s) !important;
+	font-weight: 500 !important;
+	text-transform: uppercase !important;
+	transition: var(--transition--short) ease !important;
+
+	&:hover {
+		background-color: var(--color--lgold) !important;
+		border-color: var(--color--lgold) !important;
+	}
+
+	&:active,
+	&:focus {
+		background-color: var(--color--gold) !important;
+	}
+}
