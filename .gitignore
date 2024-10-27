@@ -3,3 +3,4 @@ themes/oac/bundled
 themes/oac/dist
 debug.log
 .DS_Store
+themes/oac/languages/oac.pot
