@@ -81,9 +81,10 @@ export const images = () => {
 	    optipng({optimizationLevel: 5}),
       svgo({
         plugins: [
-          {removeViewBox: false},
-          {cleanupIDs: false},
-          {removeTitle: false}
+          { 
+            name: "preset-default",
+            params: { overrides: { removeViewBox: false, cleanupIDs: false, removeTitle: false } }
+          }
         ]
       })
     ])))
