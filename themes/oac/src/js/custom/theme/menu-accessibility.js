@@ -5,6 +5,22 @@
  const menuToggle = jQuery('.menu-toggle');
 
  /**
+  * Watch for changes to main menu aria-expanded
+  */
+ const menuBtn = document.getElementById('main-nav-btn');
+ let menuOpen = false;
+
+ const observer = new MutationObserver((mutationsList) => {
+     for (const mutation of mutationsList) {
+         if (mutation.type === "attributes" && mutation.attributeName === "aria-expanded") {
+            menuOpen = menuBtn.getAttribute('aria-expanded');
+         }
+     }
+ });
+
+observer.observe(menuBtn, { attributes: true });
+ 
+ /**
   * Close menu functions
   */
  
@@ -26,13 +42,15 @@
  // Mobile
  function closeMobileMenu() {
      jQuery('#site-navigation').removeClass('toggled');
-     menuToggle.attr('aria-expanded', 'false').focus();
+     menuToggle.attr('aria-expanded', 'false');
      jQuery('.sub-menu-toggle').removeClass('toggled').attr('aria-expanded', 'false').html('&#43;');
      jQuery('.top-level-menu-item').removeClass('toggled');
      jQuery('.sub-menu--expand').slideUp();
      jQuery('.sub-menu a').attr('tabindex', '-1');
      jQuery('.sub-menu-toggle:not(.sub-menu-toggle-top)').attr('tabindex', '-1');
-
+     if ( menuOpen === 'true' ) {
+        menuToggle.focus();
+     }
  }
  
  /**
@@ -49,7 +67,7 @@
      jQuery('.top-level-menu-item > a').off('focusin');
  
      closeMobileMenu();
- 
+    
      // Reset top-level sub-menus
      jQuery('.top-level-menu-item > .sub-menu').removeClass('active');
  
@@ -96,7 +114,7 @@
      jQuery('.sub-menu-toggle').removeClass('toggled').attr('aria-expanded', 'false');
  
      closeMenu();
- 
+    
      // Top level menu items
      jQuery('.sub-menu-toggle-top').off('click').removeClass('toggled');
  
@@ -201,9 +219,11 @@
  
  document.addEventListener( 'click', function( event ) {
      const isClickInside = siteNav.contains( event.target );
- 
+
      if ( ! isClickInside && window.innerWidth < 992 ) {
-         closeMobileMenu();
+         if ( menuOpen === 'true' ) {
+            closeMobileMenu();
+         }
      } else if ( ! isClickInside && window.innerWidth > 991 ) {
          closeMenu();
      }

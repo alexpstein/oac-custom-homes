@@ -79,7 +79,7 @@
 							</ul>
 						</nav>
 
-						<button class="menu-toggle" aria-controls="main-menu-dialog" aria-expanded="false">
+						<button id="main-nav-btn" class="menu-toggle" aria-controls="main-menu-dialog" aria-expanded="false">
 							<span></span>
 							<span></span>
 							<span class="menu-toggle__text d-lg-none"><?php esc_html_e( 'Menu', '_themename' ); ?></span>

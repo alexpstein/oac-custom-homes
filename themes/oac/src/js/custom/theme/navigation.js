@@ -47,6 +47,7 @@
 	} );
 
 	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
+	/* handled in menu-accessibility.js
 	document.addEventListener( 'click', function( event ) {
 		const isClickInside = siteNavigation.contains( event.target );
 
@@ -55,7 +56,8 @@
 			button.setAttribute( 'aria-expanded', 'false' );
 		}
 	} );
-
+	*/
+	
 	// Get all the link elements within the menu.
 	const links = menu.getElementsByTagName( 'a' );
 
