@@ -3,6 +3,11 @@
     margin: 0 0 1rem;
     text-align: center;
 
+    &--bmargin {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
     p {
         font-size: var(--text-size--s);
         line-height: var(--body-line-height);
@@ -25,5 +30,9 @@
 @include media-breakpoint-up(md) {
     .basic-content {
         padding: 1.25rem 0 1.75rem;
+
+        &--bmargin {
+            padding-bottom: 0;
+        }
     }
 }

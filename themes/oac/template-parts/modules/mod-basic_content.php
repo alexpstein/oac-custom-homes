@@ -4,7 +4,7 @@
  */
 ?>
 
-<div class="basic-content module">
+<div class="basic-content module <?php if ( get_sub_field('reduce_bottom_margin') ) echo 'basic-content--bmargin'; ?>">
     <div class="container-lg">
         <div class="row">
             <div class="col-12">
