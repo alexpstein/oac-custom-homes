@@ -46,6 +46,11 @@ function oac_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	// Set Medium image size and crop
+	if ( function_exists( 'add_image_size' ) ) {
+		add_image_size( 'medium', 620, 620, true );
+	}
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
