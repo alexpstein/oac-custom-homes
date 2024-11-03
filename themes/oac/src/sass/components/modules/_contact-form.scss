@@ -1,6 +1,10 @@
 .contact-form {
     padding: 1.25rem 0 1.25rem;
 
+    &--pt0 {
+        padding-top: 0 !important;
+    }
+
     .container-lg {
         max-width: 800px !important;
     }
