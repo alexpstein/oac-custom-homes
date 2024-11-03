@@ -1,6 +1,6 @@
 <?php
 /**
- * Basic Content
+ * Contact Form
  */
 ?>
 
