@@ -71,3 +71,12 @@ function _themename_random_string( $length ) {
 
 	return $random_string;
 }
+
+/**
+ * Remove front of URL
+ */
+function _themename_remove_http( $url ) {
+	// Remove "https://" or "http://" from the beginning of the URL if it exists
+    $result = preg_replace( "/^https?:\/\//i", "", $url );
+    return $result;
+}
