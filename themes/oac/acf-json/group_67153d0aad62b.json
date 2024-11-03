@@ -402,6 +402,27 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_6727ca7bdd597",
+                            "label": "Use Global Contact Form Text?",
+                            "name": "use_global_contact_form_text",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_671d146703aca",
                             "label": "Heading",
                             "name": "heading",
@@ -409,7 +430,15 @@
                             "type": "text",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6727ca7bdd597",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -430,7 +459,15 @@
                             "type": "textarea",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6727ca7bdd597",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -617,5 +654,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1730052375
+    "modified": 1730661036
 }
