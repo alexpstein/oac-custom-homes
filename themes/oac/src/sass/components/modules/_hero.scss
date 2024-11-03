@@ -25,6 +25,14 @@
         margin: 0;
     }
 
+    &__text--mb {
+        padding-bottom: 1em;
+
+        .hero__heading {
+            margin-top: 0;
+        }
+    }
+
     &__heading {
         color: #fff;
         text-shadow: 1px 1px 1px #000;
@@ -105,8 +113,12 @@
 @include media-breakpoint-up(lg) {
     .hero {
         background-size: 1230px;
-        margin-top: -85px;
+        margin-top: -88px;
         height: 28rem;
+
+        &__text--mb {
+            padding-bottom: 2.25em;
+        }
     }
 
     .hero.hero--center-bg {
