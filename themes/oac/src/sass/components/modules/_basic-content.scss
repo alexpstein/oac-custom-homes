@@ -34,5 +34,9 @@
         &--bmargin {
             padding-bottom: 0;
         }
+
+        p {
+            font-size: var(--text-size--m);
+        }
     }
 }
