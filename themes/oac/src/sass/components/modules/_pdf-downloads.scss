@@ -1,0 +1,53 @@
+.pdf-dl {
+    p {
+        font-size: var(--text-size--s);
+        line-height: var(--body-line-height);
+        text-align: center;
+    }
+
+    .container-lg {
+        max-width: 800px !important;
+    }
+
+    &__file {
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
+
+    &__img {
+        max-width: 150px;
+    }
+
+    &__title {
+        font-size: var(--text-size--s);
+        color: var(--color--text);
+        margin: .875em 0 .5em;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .pdf-dl {
+        &__flex {
+            display: flex;
+            flex-direction: row;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        &__file {
+            flex-basis: 50%;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .pdf-dl {
+        p {
+            font-size: var(--text-size--m);
+        }
+
+        &__flex {
+            margin: 2rem auto 0;
+        }
+    }
+}
