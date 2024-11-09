@@ -1,0 +1,198 @@
+.gallery {
+    --grid-gap: 8px;
+    margin-bottom: 0;
+
+    &.module {
+        grid-gap: 0;
+    }
+
+    .container-lg {
+        max-width: 600px !important;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__flex {
+        list-style: none;
+        margin: 1.5rem auto 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__li {
+        flex-basis: calc((100%/3) - ( ( var(--grid-gap)*2 ) / 3 ) );
+        margin-bottom: var(--grid-gap);
+    }
+
+    &__thumb {
+        display: block;
+        transform: scale(1);
+        transform-origin: center center;
+        transition: var(--transition--short) ease-in-out transform;
+    }
+
+    button.gallery__btn {
+        display: block;
+        background: none;
+        // border: 1px solid var(--color--mgray);
+        border: 0;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+
+        &:hover,
+        &:focus {
+            .gallery__thumb {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__container {
+        position: relative;
+        background-color: var(--color--dgray);
+        // set initial collapsed state
+        height: 0;
+        overflow: hidden;
+        transition: height var(--transition--short) ease;
+
+        button.gallery__close {
+            font-size: 2.5rem;
+            font-weight: normal;
+            padding: 0 .25em;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+        }
+
+        button.slick-arrow {
+            position: absolute;
+            // height: 58%;
+            // width: 30%;
+            height: 44px;
+            width: 44px;
+            background-color: transparent;
+            border: 0;
+            border-radius: .5rem;
+            appearance: none;
+            padding: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            background: rgba(255, 255, 255, .5);
+
+            .arrow {
+                position: absolute;
+                height: 12px;
+                width: 30px;
+                top: 50%;
+                top: calc(50% - 6px);
+                transition: .25s ease;
+            }
+
+            span {
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 14px;
+                background-color: var(--color--dgray);
+                transition: .25s ease;
+            }
+        }
+
+        button.slick-prev {
+            left: .5rem;
+
+            .arrow {
+                left: 14px;
+            }
+
+            span {
+                left: 0;
+
+                &:first-of-type {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+
+                &:last-of-type {
+                    bottom: 0;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        button.slick-next {
+            right: .5rem;
+
+            .arrow {
+                right: 14px;
+            }
+
+            span {
+                right: 0;
+
+                &:first-of-type {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+
+                &:last-of-type {
+                    bottom: 0;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    &__inner-wrapper {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    &__el {
+        height: 10px;
+        overflow: hidden;
+        padding-bottom: 66%;
+        position: relative;
+    }
+
+    &__img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .gallery {
+        --grid-gap: 16px;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .gallery {
+        --grid-gap: 24px;
+
+        .container-lg {
+            max-width: 800px !important;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .gallery {
+        &__inner-wrapper {
+            margin: 2rem auto;
+            max-height: calc(950px - 4rem);
+            overflow: hidden;
+            box-shadow: 0px 0px 16px 10px rgba(0, 0, 0, 0.2);
+        }
+    }
+}

@@ -1,3 +1,3 @@
 import './bootstrap/collapse.js';
 import './bootstrap/modal.js';
-// import './slick/slick';
+import './slick/slick.js';
