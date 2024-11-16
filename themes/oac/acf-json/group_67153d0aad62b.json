@@ -489,6 +489,121 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_6738e99b5346c": {
+                    "key": "layout_6738e99b5346c",
+                    "name": "floor_plans",
+                    "label": "Floor Plans",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_6738e9a25346e",
+                            "label": "Floor Plans",
+                            "name": "floor_plans",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 0,
+                            "collapsed": "",
+                            "button_label": "Add Row",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_6738e9dc5346f",
+                                    "label": "Floor Plan",
+                                    "name": "floor_plan",
+                                    "aria-label": "",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "oac_plans"
+                                    ],
+                                    "post_status": "",
+                                    "taxonomy": "",
+                                    "return_format": "object",
+                                    "multiple": 0,
+                                    "allow_null": 0,
+                                    "allow_in_bindings": 1,
+                                    "bidirectional": 0,
+                                    "ui": 1,
+                                    "bidirectional_target": [],
+                                    "parent_repeater": "field_6738e9a25346e"
+                                },
+                                {
+                                    "key": "field_6738ea6353470",
+                                    "label": "Plan Image",
+                                    "name": "plan_image",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "allow_in_bindings": 0,
+                                    "preview_size": "thumbnail",
+                                    "parent_repeater": "field_6738e9a25346e"
+                                },
+                                {
+                                    "key": "field_6738ee1be62a7",
+                                    "label": "Plan Image @2x",
+                                    "name": "plan_image_2x",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "Include a 2x version of the image for retina screens.",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "url",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "allow_in_bindings": 0,
+                                    "preview_size": "thumbnail",
+                                    "parent_repeater": "field_6738e9a25346e"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_672f9ce9655cc": {
                     "key": "layout_672f9ce9655cc",
                     "name": "gallery",
@@ -1133,6 +1248,13 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "oac_plans"
+            }
         ]
     ],
     "menu_order": 0,
@@ -1146,5 +1268,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731173665
+    "modified": 1731785267
 }
