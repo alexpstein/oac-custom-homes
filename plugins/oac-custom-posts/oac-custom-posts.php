@@ -23,7 +23,7 @@ function create_plans_posttype() {
         'name' => __( 'Floor Plans', 'oac' ),
         'singular_name' => __( 'Floor Plan', 'oac' )
       ),
-      'supports' => array( 'title', 'editor', 'revisions' ),
+      'supports' => array( 'title', 'revisions' ),
       'description' => __( 'OAC Floor Plans', 'oac' ),
       'public' => true,
       'publicly_queryable' => true,
