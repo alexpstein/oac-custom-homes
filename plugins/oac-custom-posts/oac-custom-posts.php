@@ -58,7 +58,7 @@ function create_team_posttype() {
         'view_item' => __( 'View Team Member', 'oac' ),
         'all_items' => __( 'All Team Members', 'oac' )
       ),
-      'supports' => array( 'title', 'editor' ),
+      'supports' => array( 'title', 'thumbnail', 'editor' ),
       'description' => __( 'OAC Team Members', 'oac' ),
       'public' => true,
       'publicly_queryable' => false,
