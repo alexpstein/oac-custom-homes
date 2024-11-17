@@ -604,6 +604,42 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_673a3b32a9b63": {
+                    "key": "layout_673a3b32a9b63",
+                    "name": "floor_plan_preview",
+                    "label": "Floor Plan Preview",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_673a3b3ba9b69",
+                            "label": "Image",
+                            "name": "image",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "allow_in_bindings": 0,
+                            "preview_size": "medium"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_672f9ce9655cc": {
                     "key": "layout_672f9ce9655cc",
                     "name": "gallery",
@@ -614,6 +650,27 @@
                             "key": "field_672f9cfc655ce",
                             "label": "Gallery Title",
                             "name": "gallery_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_673a449ebf494",
+                            "label": "Gallery Subtitle",
+                            "name": "gallery_subtitle",
                             "aria-label": "",
                             "type": "text",
                             "instructions": "",
@@ -658,6 +715,27 @@
                             "mime_types": "",
                             "insert": "append",
                             "preview_size": "medium"
+                        },
+                        {
+                            "key": "field_673a4883c2b53",
+                            "label": "Add Bottom Padding?",
+                            "name": "add_bottom_padding",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
                         }
                     ],
                     "min": "",
@@ -1347,5 +1425,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731790424
+    "modified": 1731872932
 }

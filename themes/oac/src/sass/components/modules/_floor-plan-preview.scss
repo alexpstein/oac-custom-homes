@@ -1,0 +1,59 @@
+.floor-plan-prev {
+    &__btn {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 1rem auto 0;
+        display: block;
+        text-transform: none;
+        color: var(--color--gray);
+        max-width: 275px;
+
+        &:hover,
+        &:focus {
+            background: none;
+            border: none;
+            text-decoration: underline;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    &__modal {
+        text-align: center;
+
+        .modal-header {
+            padding-bottom: 0;
+        }
+
+
+    }
+
+    &__img-container {
+        overflow: scroll;
+        max-height: calc(100vh - var(--wp-admin--admin-bar--height, 0px) - 100px);
+    }
+
+    &__img-full {
+        width: 1200px;
+        max-width: 1200px;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .floor-plan-prev {
+        &__btn {
+            max-width: 350px;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .floor-plan-prev {
+        &__btn {
+            max-width: 450px;
+        }
+    }
+}
