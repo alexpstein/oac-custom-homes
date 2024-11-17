@@ -46,18 +46,19 @@ p.site-title {
 
 @include media-breakpoint-up(lg) {
     .site-header {
-        max-width: 992px;
-        margin: 2.5em auto 0;
+        max-width: 100%;
+        margin: 0;
         padding: 0;
         min-height: auto;
-        box-shadow: none;
+        // box-shadow: none;
         position: relative;
         z-index: 9999;
         background-color: rgba(#fff, .85);
     }
 
     .logo--navbar {
-        max-width: 300px;
-        margin: -1.675em 0 -.5em;
+        max-width: 225px;
+        padding: .5rem 0;
+        margin: 0;
     }
 }

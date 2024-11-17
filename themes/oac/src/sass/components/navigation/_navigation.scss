@@ -269,11 +269,11 @@
 			justify-content: flex-end;
 
 			li.top-level-menu-item {
-				margin: 0.325em 1em -0.625em 0;
+				margin: 1.25em 2em -0.625em 0;
 				padding-bottom: .5em;
 				
 				&:last-child {
-					margin-right: 1.25em;
+					margin-right: 2.25em;
 				}
 
 				&:after {
@@ -363,7 +363,7 @@
 		height: 36px;
 		padding: 4px;
 		border-radius: 2px;
-		margin: 2px 0 0;
+		margin: 20px 0 0;
 
 		span {
 			width: 28px;
