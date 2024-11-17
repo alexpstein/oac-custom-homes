@@ -5,11 +5,12 @@
 // only supports one gallery per page currently
 ?>
 
-<div class="gallery module">
+<div class="gallery module<?php if ( get_sub_field('add_bottom_padding') ) echo ' gallery--bpad'; ?>">
     <div class="container-lg">
         <hr>
         <h2 class="gallery__title"><?php echo get_sub_field('gallery_title'); ?></h2>
         <?php
+        if ( ! empty( get_sub_field('gallery_subtitle') ) ) echo '<p class="gallery__subtitle">' . get_sub_field('gallery_subtitle') . '</p>';
         $images = get_sub_field('gallery');
         ?>
         <ul class="gallery__flex">

@@ -10,8 +10,24 @@
         max-width: 600px !important;
     }
 
+    &--bpad {
+        padding-bottom: 2.5rem;
+    }
+
     &__title {
         text-align: center;
+    }
+
+    &__subtitle {
+        font-style: italic;
+        color: var(--color--gray);
+        text-align: center;
+        font-size: var(--text-size--s);
+        margin-top: 0;
+    }
+
+    .gallery__title:is(:has(+ .gallery__subtitle)) {
+        margin-bottom: 0;
     }
 
     &__flex {
