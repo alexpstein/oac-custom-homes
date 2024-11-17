@@ -179,7 +179,7 @@ if ( ! function_exists( '_themename_socials' ) ) :
 						$sm_icon_url = $sm_icon['url'];
 					?>
 						<li class="<?php echo $class_var; ?>__social-li">
-							<a href="<?php echo esc_attr( get_sub_field('sm_link') ); ?>" class="<?php echo $class_var; ?>__social-link" aria-label="<?php echo $sm_label; ?>">
+							<a href="<?php echo esc_attr( get_sub_field('sm_link') ); ?>" class="<?php echo $class_var; ?>__social-link" aria-label="<?php echo $sm_label; ?>" target="_blank">
 								<?php echo file_get_contents( _themename_full_path( $sm_icon_url ) ); ?>
 							</a>
 						</li>								

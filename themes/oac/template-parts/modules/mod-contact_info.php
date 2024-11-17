@@ -45,7 +45,7 @@ if ( $use_global_email == false && !empty( get_sub_field('email') ) ) $email = g
                         <div class="contact-info__social-i" aria-hidden="true">
                             <?php echo file_get_contents( _themename_full_path( $sm_icon_url ) ); ?>
                         </div>
-                        <a href="<?php echo $sm_url; ?>" class="contact-info__social-link" aria-label="<?php echo $sm_url . ', ' . $sm_label; ?>"><?php echo _themename_remove_http( $sm_url ); ?></a>
+                        <a href="<?php echo $sm_url; ?>" class="contact-info__social-link" aria-label="<?php echo $sm_url . ', ' . $sm_label; ?>" target="_blank"><?php echo _themename_remove_http( $sm_url ); ?></a>
                     </div>	
                 <?php
                 endwhile; 
