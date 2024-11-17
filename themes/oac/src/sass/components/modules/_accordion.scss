@@ -1,6 +1,10 @@
 .accordion {
     padding: 2rem 0 0;
 
+    .container-lg {
+        max-width: 900px !important;
+    }
+
     &__item {
         margin-bottom: .675rem;
 
