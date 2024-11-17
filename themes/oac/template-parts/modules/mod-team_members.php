@@ -23,9 +23,9 @@
         ?>
             <div class="team__card">
                 <button class="team__btn" data-bs-toggle="modal" data-bs-target="#team-modal-<?php echo $i; ?>" aria-label="<?php echo sprintf( __( 'Open dialog for more about %s', '_themename' ), get_the_title( $team_id ) ); ?>">
-                    <div class="team__img-wrap<?php if ( get_field( 'add_border', $team_id ) ) echo ' team__img-wrap--border'; ?>">
+                    <span class="team__img-wrap<?php if ( get_field( 'add_border', $team_id ) ) echo ' team__img-wrap--border'; ?>">
                         <?php echo get_the_post_thumbnail( $team_id ); ?>
-                    </div>
+                    </span>
                     <p class="team__name"><?php echo get_the_title( $team_id ); ?></p>
                 </button>
             </div>

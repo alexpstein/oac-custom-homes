@@ -10,7 +10,7 @@ $prev_image = get_sub_field('image');
     <div class="container-lg">
         <button type="button" aria-label="<?php _e( 'Click to Enlarge floor plan in dialog', '_themename' ); ?>" class="floor-plan-prev__btn" data-bs-toggle="modal" data-bs-target="#floor-plan-prev-dialog">
             <img src="<?php echo $prev_image['url']; ?>" class="floor-plan-prev__img" alt="">
-            <p class="floor-plan-prev__btn-text"><?php _e( 'Click to Enlarge', '_themename' ); ?></p>
+            <span class="floor-plan-prev__btn-text"><?php _e( 'Click to Enlarge', '_themename' ); ?></span>
         </button>
     </div>
 </div>

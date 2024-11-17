@@ -15,10 +15,12 @@
             border: none;
             text-decoration: underline;
         }
+    }
 
-        p {
-            margin-bottom: 0;
-        }
+    &__btn-text {
+        display: block;
+        margin-top: 1rem;
+        line-height: var(--body-line-height);
     }
 
     &__modal {
