@@ -34,7 +34,10 @@ function create_plans_posttype() {
       'public' => true,
       'publicly_queryable' => true,
       'exclude_from_search' => true,
-      'has_archive' => false
+      'has_archive' => false,
+      'rewrite' => array(
+        'slug' => __( 'floor-plan', 'oac' )
+      )
     )
   );
 }
