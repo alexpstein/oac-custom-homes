@@ -415,11 +415,11 @@
                             "append": ""
                         },
                         {
-                            "key": "field_6727dcaec7b31",
-                            "label": "Use Divider",
-                            "name": "use_divider",
+                            "key": "field_673a4b9c074ea",
+                            "label": "Divider Style",
+                            "name": "divider_style",
                             "aria-label": "",
-                            "type": "true_false",
+                            "type": "radio",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -428,41 +428,18 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "",
-                            "default_value": 1,
-                            "allow_in_bindings": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_6727dcc8c7b32",
-                            "label": "Use Alt Divider Style",
-                            "name": "use_alt_divider_style",
-                            "aria-label": "",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_6727dcaec7b31",
-                                        "operator": "==",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
+                            "choices": {
+                                "default": "Default",
+                                "alt": "Alternate",
+                                "none": "None"
                             },
-                            "message": "",
-                            "default_value": 0,
+                            "default_value": "default : Default",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "other_choice": 0,
                             "allow_in_bindings": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
+                            "layout": "vertical",
+                            "save_other_choice": 0
                         },
                         {
                             "key": "field_6727ddc6a560f",
@@ -1425,5 +1402,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1731872932
+    "modified": 1731874189
 }
