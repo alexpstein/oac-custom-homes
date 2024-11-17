@@ -84,6 +84,10 @@
 
 @include media-breakpoint-up(md) {
     .contact-form {
+        p {
+            font-size: var(--text-size--m);
+        }
+        
         .gform-theme--foundation {
             .gfield--two-thirds {
                 grid-column: 1 / 8;
@@ -99,9 +103,5 @@
 @include media-breakpoint-up(lg) {
     .contact-form {
         padding: 1.25rem 0 2rem;
-
-        p {
-            font-size: var(--text-size--m);
-        }
     }
 }
