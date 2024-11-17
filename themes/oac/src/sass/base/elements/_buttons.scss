@@ -42,8 +42,8 @@ input[type="submit"] {
 
 .btn.btn--white {
 	background-color: rgba(#fff, .85);
-	border: 1px solid #fff;
-	padding: .5rem .75rem;
+	border: none;
+	padding: .675rem .75rem;
 	color: var(--color--mgray);
 	transition: var(--transition--short) ease background-color;
 

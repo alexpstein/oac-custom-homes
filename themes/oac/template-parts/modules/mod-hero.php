@@ -14,7 +14,7 @@ if ( empty( get_sub_field('hero_cta_button_text') ) ) $no_btn = true;
         <div class="hero__text<?php if ( $no_btn ) echo ' hero__text--mb'; ?>">
             <h1 class="hero__heading"><?php echo get_sub_field('hero_heading') ?></h1>
             <?php if ( ! empty( get_sub_field('hero_cta_button_text') ) ) echo '<a href="' . get_sub_field('hero_cta_button_link') . '" class="btn btn--white hero__cta-btn">' . get_sub_field('hero_cta_button_text') . '</a>'; ?>
-            <?php if ( get_sub_field('display_down_arrow') ) echo '<a href="#article-body" class="hero__skip-link" aria-label="' . __( 'Scroll to body content', '_themename' ) . '"></a>'; ?>
+            <?php if ( get_sub_field('display_down_arrow') ) echo '<a href="#article-body" id="hero-skip-btn" class="hero__skip-link" aria-label="' . __( 'Scroll to body content', '_themename' ) . '"></a>'; ?>
         </div>
     </div>
 </div>

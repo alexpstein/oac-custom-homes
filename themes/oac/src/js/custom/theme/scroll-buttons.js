@@ -3,6 +3,27 @@
  */
 
 document.addEventListener( 'DOMContentLoaded', () => {
+    // Skip hero button
+    const skipHeroBtn = document.getElementById('hero-skip-btn');
+
+    function scrollToTarget(e) {
+        e.preventDefault();
+        const targetEl = document.getElementById('article-body');
+        if ( targetEl ) {
+            const targetPos = targetEl.offsetTop; // Get the top position of the element
+            console.log(targetPos);
+            window.scrollTo({
+                top: targetPos,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    if ( skipHeroBtn ) {
+        skipHeroBtn.addEventListener( 'click', scrollToTarget );
+    }
+
+    // Back to top button
     const topBtn = document.getElementById('top-of-page');
     
     function scrollToTop() {
