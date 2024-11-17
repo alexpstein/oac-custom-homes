@@ -88,11 +88,13 @@
 
 						<div class="main-navigation__container" id="main-menu-dialog" role="dialog" aria-label="<?php _e( 'Main Navigation', '_themename' ); ?>">
 							<div class="main-navigation__controls">
-								<img src="<?php echo $logo[0]; ?>" alt="<?php echo get_bloginfo( 'name'); ?>" class="main-navigation__logo logo">
 								<button id="mobile-nav-close" class="main-navigation__close">
 									<span aria-hidden="true"><?php esc_html_e( '&times;', '_themename' ); ?></span>
 									<span class="screen-reader-text"><?php esc_html_e( 'Close', '_themename' ); ?></span>
 								</button>
+								<a href="<?php echo esc_url(home_url('/')); ?>" class="main-navigation__home">
+									<img src="<?php echo $logo[0]; ?>" alt="<?php echo ( is_front_page() ) ? get_bloginfo( 'name') : $logo_alt; ?>" class="main-navigation__logo logo">
+								</a>
 							</div>
 							
 							<nav class="main-navigation__nav" aria-label="<?php _e( 'Main', '_themename' ); ?>">

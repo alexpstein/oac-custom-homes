@@ -34,6 +34,10 @@
 		min-height: 40px;
 	}
 
+	&__home {
+		order: 1;
+	}
+
 	&__close {
 		background: transparent;
 		color: var(--color--mgray);
@@ -41,6 +45,7 @@
 		font-weight: normal;
 		padding: 0 .125em;
 		border: 0;
+		order: 2;
 
 		&:hover,
 		&:focus {
