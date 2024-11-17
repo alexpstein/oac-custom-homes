@@ -1,16 +1,18 @@
 /**
  * Slick init
  */
-jQuery('.gallery__slick').slick({
-    slidesToShow: 1,
-    infinite: true,
-    speed: 600,
-    prevArrow: '<button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous Image" role="button" style="display: inline-block;" tabindex="-1"><div class="arrow"><span></span><span></span></div></button>',
-    nextArrow: '<button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next Image" role="button" style="display: inline-block;" tabindex="-1"><div class="arrow"><span></span><span></span></div></button>',
-    dots: false,
-    fade: true,
-    rows: 0
-});
+if ( jQuery('.gallery__slick').length ) {
+    jQuery('.gallery__slick').slick({
+        slidesToShow: 1,
+        infinite: true,
+        speed: 600,
+        prevArrow: '<button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous Image" role="button" style="display: inline-block;" tabindex="-1"><div class="arrow"><span></span><span></span></div></button>',
+        nextArrow: '<button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next Image" role="button" style="display: inline-block;" tabindex="-1"><div class="arrow"><span></span><span></span></div></button>',
+        dots: false,
+        fade: true,
+        rows: 0
+    });
+}
 
 /**
  * Expandable gallery functionality
@@ -65,13 +67,15 @@ function scrollToGallery(id) {
 }
 
 /**
- * Add event listeners to gallery buttons
+ * Add event listeners to gallery buttons if they exist on the page
  */
-expandBtns.forEach(button => {
-    button.addEventListener( 'click', galleryExpand );
-});
+if ( document.querySelector( '.gallery' ) ) {
+    expandBtns.forEach(button => {
+        button.addEventListener( 'click', galleryExpand );
+    });
 
-closeBtn.addEventListener( 'click', galleryCollapse );
+    closeBtn.addEventListener( 'click', galleryCollapse );
+}
 
 /**
  * Go to slide
