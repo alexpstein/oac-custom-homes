@@ -92,6 +92,19 @@
     }
 }
 
+footer.entry-footer {
+    position: relative;
+    margin-top: -3rem;
+    z-index: 2;
+    text-align: right;
+
+    .post-edit-link {
+        background-color: #fff;
+        padding: .75rem;
+        margin-right: 1rem;
+    }
+}
+
 @include media-breakpoint-up(sm) {
     .footer {
         &__main {
