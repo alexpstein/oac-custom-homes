@@ -37,6 +37,10 @@
         &__logo {
             flex-basis: 180px;
             padding: 0 1rem;
+
+            &:nth-of-type(2) {
+                padding-left: 0;
+            }
         }
     }
 }
@@ -46,13 +50,13 @@
         &__heading {
             margin-bottom: 0;
         }
-        
+
         &__flex {
-            max-width: 790px;
+            max-width: 870px;
         }
 
         &__logo {
-            flex-basis: 210px;
+            flex-basis: 250px;
         }
     }
 }
