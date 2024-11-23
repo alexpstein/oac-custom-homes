@@ -1,0 +1,13 @@
+.site-main--search,
+.no-results,
+.not-found {
+    padding: 0 0 2rem;
+}
+
+@include media-breakpoint-up(md) {
+    .site-main--search,
+    .no-results,
+    .not-found {
+        padding: 3rem 0 4rem;
+    }
+}
