@@ -8,7 +8,7 @@ $no_btn = false;
 if ( empty( get_sub_field('hero_cta_button_text') ) ) $no_btn = true;
 ?>
 
-<div class="hero module<?php if ( get_sub_field('override_offset') ) echo ' hero--center-bg'; ?>" style="background-image: url(<?php echo esc_url($hero_bg['url']); ?>); background-position: <?php echo get_sub_field('hero_image_offset_x') . '% ' . get_sub_field('hero_image_offset_y') . '%'; ?>">
+<div class="hero module<?php if ( get_sub_field('override_offset') ) echo ' hero--center-bg'; ?>" style="background-image: url(<?php echo esc_url($hero_bg['url']); ?>); background-position: <?php echo get_sub_field('hero_image_offset_x') . '% ' . get_sub_field('hero_image_offset_y') . '%;'; ?>">
     <div class="hero__bg-gradient" style="opacity: <?php echo ( !empty( get_sub_field('bg_gradient_opacity') ) ) ? get_sub_field('bg_gradient_opacity') : '0'; ?>;"></div>
     <div class="container-lg">
         <div class="hero__text<?php if ( $no_btn ) echo ' hero__text--mb'; ?>">
