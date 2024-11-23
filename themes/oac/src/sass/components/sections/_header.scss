@@ -46,19 +46,28 @@ p.site-title {
 
 @include media-breakpoint-up(lg) {
     .site-header {
-        max-width: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
         margin: 0;
         padding: 0;
         min-height: auto;
-        // box-shadow: none;
-        position: relative;
+        position: fixed;
         z-index: 9999;
         background-color: rgba(#fff, .85);
+
+        &--admin-bar {
+            top: var(--wp-admin--admin-bar--height); // Height of admin bar
+        }
     }
 
     .logo--navbar {
         max-width: 225px;
         padding: .5rem 0;
         margin: 0;
+    }
+
+    html {
+        margin-top: calc(var(--wp-admin--admin-bar--height, 0px) + var(--nav-height)) !important; // Height of mobile menu
     }
 }
