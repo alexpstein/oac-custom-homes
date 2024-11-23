@@ -32,6 +32,7 @@
 
     &__nav-menu {
         font-size: var(--text-size--s);
+        column-count: 2;
 
         li {
             margin: 0 0 .5em;
@@ -115,6 +116,10 @@
         &__nav-wrapper {
             flex-basis: 40%;
         }
+
+        &__nav-menu {
+            padding-right: 1.5rem;
+        }
     }
 }
 
@@ -140,6 +145,10 @@
             li {
                 margin: 0 0 .325em;
             }
+        }
+
+        &__contact {
+            margin-left: 4rem;
         }
 
         &__social-menu {
