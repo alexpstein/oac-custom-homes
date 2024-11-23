@@ -19,6 +19,22 @@ p.site-title {
     max-width: 167px;
 }
 
+.no-js-alert {
+    display: block;
+    position: fixed;
+    text-align: center;
+    z-index: 10;
+    width: 100%;
+    background: var(--color--gold);
+    color: #000;
+    font-weight: 700;
+
+    p {
+        margin: .5em 0;
+        font-size: var(--text-size--s);
+    }
+}
+
 @media screen and (max-width: 600px) {
     html #wpadminbar {
         position: fixed;
@@ -69,5 +85,11 @@ p.site-title {
 
     html {
         margin-top: calc(var(--wp-admin--admin-bar--height, 0px) + var(--nav-height)) !important; // Height of mobile menu
+    }
+
+    .no-js-alert {
+        p {
+            font-size: var(--text-size--m);
+        }
     }
 }
