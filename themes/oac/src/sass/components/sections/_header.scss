@@ -84,7 +84,7 @@ p.site-title {
     }
 
     html {
-        margin-top: calc(var(--wp-admin--admin-bar--height, 0px) + var(--nav-height)) !important; // Height of mobile menu
+        margin-top: calc(var(--wp-admin--admin-bar--height, 0px) + var(--nav-height)) !important; // Height of sticky nav
     }
 
     .no-js-alert {
