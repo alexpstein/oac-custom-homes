@@ -14,7 +14,7 @@ if ( $use_global == false ) {
 }
 ?>
 
-<div class="contact-form module <?php if ( $reduce_top_padding ) echo 'contact-form--pt0'; ?>">
+<div id="contact" class="contact-form module <?php if ( $reduce_top_padding ) echo 'contact-form--pt0'; ?>">
     <div class="container-lg">
         <div class="row">
             <div class="col-12">
