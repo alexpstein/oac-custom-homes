@@ -5,7 +5,7 @@
 // only supports one gallery per page currently
 ?>
 
-<div class="gallery module<?php if ( get_sub_field('add_bottom_padding') ) echo ' gallery--bpad'; ?>">
+<div class="gallery module">
     <div class="container-lg">
         <hr>
         <h2 class="gallery__title"><?php echo get_sub_field('gallery_title'); ?></h2>
@@ -13,6 +13,23 @@
         if ( ! empty( get_sub_field('gallery_subtitle') ) ) echo '<p class="gallery__subtitle">' . get_sub_field('gallery_subtitle') . '</p>';
         $images = get_sub_field('gallery');
         ?>
+    </div>
+</div>
+<div class="gallery__container">
+    <div class="gallery__slick">
+        <?php
+        foreach( $images as $img ):
+        ?>
+        <div>
+            <div class="gallery__el">
+                <img src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo $img['alt']; ?>" class="gallery__img">
+            </div>
+        </div>
+        <?php
+        endforeach;
+        ?>
+    </div>
+    <div class="gallery module<?php if ( get_sub_field('add_bottom_padding') ) echo ' gallery--bpad'; ?>">
         <ul class="gallery__flex">
             <?php  
             $i = 0;
@@ -29,22 +46,5 @@
             ?>
         </ul>
     </div>
-    <div id="gallery-collapse" class="gallery__container">
-        <div class="gallery__inner-wrapper">
-            <button class="gallery__close" aria-label="<?php echo __( 'Close', '_themename' ); ?>" tabindex="-1">&times;</button>
-            <div class="gallery__slick">
-                <?php
-                foreach( $images as $img ):
-                ?>
-                <div>
-                    <div class="gallery__el">
-                        <img src="<?php echo esc_url( $img['url'] ); ?>" alt="<?php echo $img['alt']; ?>" class="gallery__img">
-                    </div>
-                </div>
-                <?php
-                endforeach;
-                ?>
-            </div>
-        </div>
-    </div>
 </div>
+        

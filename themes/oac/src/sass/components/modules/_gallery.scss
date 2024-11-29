@@ -32,17 +32,24 @@
 
     &__flex {
         list-style: none;
-        margin: 1.5rem auto 0;
-        padding: 0;
+        margin: 1rem auto;
+        padding: 0 1rem;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     &__li {
-        flex-basis: calc((100%/3) - ( ( var(--grid-gap)*2 ) / 3 ) );
+        flex-basis: calc((100%/5) - ( ( var(--grid-gap)*4 ) / 5 ) );
+        margin-right: var(--grid-gap);
         margin-bottom: var(--grid-gap);
+
+        @include media-breakpoint-down(md) {
+            &:nth-of-type(5n) {
+                margin-right: 0;
+            }
+        }
     }
 
     &__thumb {
@@ -55,27 +62,17 @@
     button.gallery__btn {
         display: block;
         background: none;
-        // border: 1px solid var(--color--mgray);
+        border: 1px solid #ccc;
         border: 0;
         padding: 0;
         margin: 0;
         overflow: hidden;
-
-        &:hover,
-        &:focus {
-            .gallery__thumb {
-                transform: scale(1.1);
-            }
-        }
     }
 
     &__container {
+        margin: 0 auto;
         position: relative;
-        background-color: var(--color--dgray);
-        // set initial collapsed state
-        height: 0;
-        overflow: hidden;
-        transition: height var(--transition--short) ease;
+        background-color: #fff
     }
 
     &__container,
@@ -189,24 +186,54 @@
     }
 }
 
-@include media-breakpoint-up(sm) {
-    .gallery {
-        --grid-gap: 16px;
+@include media-breakpoint-up(md) {
+    .gallery__li {
+        flex-basis: calc((100%/10) - ( ( var(--grid-gap)*9 ) / 10 ) );
+
+        &:nth-of-type(10n) {
+            margin-right: 0;
+        }
     }
 }
 
 @include media-breakpoint-up(lg) {
     .gallery {
-        --grid-gap: 24px;
-
         .container-lg {
             max-width: 800px !important;
+        }
+
+        &__container {
+            max-width: 800px;
+
+            button.slick-prev {
+                left: -4rem;
+            }
+
+            button.slick-next {
+                right: -4rem;
+            }
+        }
+
+        &__flex {
+            padding: 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .gallery {
+        &__container {
+            max-width: 1100px;
         }
     }
 }
 
 @media screen and (min-width: 1440px) {
     .gallery {
+        &__container {
+            max-width: 1340px;
+        }
+
         &__inner-wrapper {
             margin: 2rem auto;
             max-height: calc(950px - 4rem);
