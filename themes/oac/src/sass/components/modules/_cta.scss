@@ -42,7 +42,12 @@
         p {
             font-size: var(--text-size--s);
             line-height: var(--body-line-height);
+            color: var(--color--xdgray);
         }
+    }
+
+    &__heading {
+        color: var(--color--xdgray);
     }
 
     &__links {
@@ -66,10 +71,16 @@
     &__link {
         text-decoration: none;
         font-weight: 700;
+        color: var(--color--xdgray);
+
+        &:visited {
+            color: var(--color--xdgray);
+        }
 
         &:hover,
         &:focus {
             text-decoration: underline;
+            color: var(--color--xdgray);
         }
     }
 }
