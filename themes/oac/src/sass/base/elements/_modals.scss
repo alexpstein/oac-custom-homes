@@ -8,6 +8,10 @@
         background: #fff;
     }
 
+    &-full-width {
+        max-width: calc(100% - 2rem);
+    }
+
     &-header {
         .btn-close {
             background: none;
@@ -63,5 +67,11 @@
                 font-size: var(--text-size--m);
             }
         }
+    }
+}
+
+@include media-breakpoint-up(xxl) {
+    .modal-full-width {
+        max-width: 1400px;
     }
 }
