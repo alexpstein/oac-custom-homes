@@ -105,7 +105,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<button type="button" id="top-of-page" class="btn-top" aria-label="<?php _e( 'Back to top', '_themename' ); ?>"><span class="btn-top__tri" aria-hidden="true"></span></button>
+<button type="button" id="top-of-page" class="btn-top" aria-label="<?php _e( 'Back to top', '_themename' ); ?>"><span class="btn-top__tri" aria-hidden="true"></span><span class="btn-top__text"><?php _e( 'Top', '_themename' ); ?></span></button>
 
 </body>
 </html>

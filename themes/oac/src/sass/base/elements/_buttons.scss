@@ -81,6 +81,7 @@ input[type="submit"] {
 	display: block;
 	position: fixed;
 	border-radius: 50%;
+	border: 1px solid #fff;
 	background: var(--color--gold);
 	filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.15));
 	width: 50px;
@@ -103,13 +104,24 @@ input[type="submit"] {
 		display: block;
 		position: absolute;
 		width: 0; 
-		height: 0; 
-		border-left: 16px solid transparent;
-		border-right: 16px solid transparent;
-		border-bottom: 26px solid #fff;
+		height: 0;
+		border-left: 12px solid transparent;
+		border-right: 12px solid transparent;
+		border-bottom: 18px solid #fff;
 		left: 50%;
-		top: calc(50% - 2px);
+		top: calc(42% - 2px);
 		transform: translate(-50%, -50%);
+	}
+
+	&__text {
+		position: absolute;
+		display: block;
+		font-size: var(--text-size--xs);
+		bottom: 5px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #fff;
+		text-transform: uppercase;
 	}
 }
 
