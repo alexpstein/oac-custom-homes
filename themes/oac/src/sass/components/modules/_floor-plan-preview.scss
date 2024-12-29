@@ -1,4 +1,25 @@
 .floor-plan-prev {
+    text-align: center;
+
+    h2 {
+        margin: 0;
+    }
+
+    p {
+        font-size: var(--text-size--s);
+        line-height: var(--body-line-height);
+        margin: 1em 0 0;
+
+        &:first-of-type {
+            margin-top: 1.5em;
+        }
+    }
+
+    &__text {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+
     &__btn {
         background: none;
         border: none;
@@ -44,6 +65,14 @@
     }
 }
 
+@media screen and (max-width: 374px) {
+    .floor-plan-prev {
+        h2.highlight {
+            font-size: var(--text-size--m);
+        }
+    }
+}
+
 @include media-breakpoint-up(sm) {
     .floor-plan-prev {
         &__btn {
@@ -54,8 +83,45 @@
 
 @include media-breakpoint-up(md) {
     .floor-plan-prev {
+        text-align: left;
+
+        p {
+            font-size: var(--text-size--m);
+        }
+
+        &__flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        &__text {
+            margin-left: 0;
+        }
+
+        &__img {
+            max-width: 390px;
+
+            &.animate {
+                transform: translateX(20px);
+            }
+
+            &.animated {
+                transform: translateX(0);
+            }
+        }
+
         &__btn {
             max-width: 450px;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .floor-plan-prev {
+        &__text {
+            margin-right: 50px;
         }
     }
 }

@@ -841,6 +841,27 @@
                     "display": "row",
                     "sub_fields": [
                         {
+                            "key": "field_677196e0434cf",
+                            "label": "Floor Plan Text",
+                            "name": "floor_plan_text",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "allow_in_bindings": 0,
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
                             "key": "field_673a3b3ba9b69",
                             "label": "Image",
                             "name": "image",
@@ -1870,5 +1891,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1735494430
+    "modified": 1735497465
 }
