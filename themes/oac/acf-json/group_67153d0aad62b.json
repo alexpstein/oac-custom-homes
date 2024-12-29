@@ -1747,6 +1747,95 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_67718ab182b37": {
+                    "key": "layout_67718ab182b37",
+                    "name": "standard_inclusions_info",
+                    "label": "Standard Inclusions Info",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_67718ac682b3d",
+                            "label": "Use Global Standard Inclusions Message?",
+                            "name": "use_global_standard_inclusions_message",
+                            "aria-label": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 1,
+                            "allow_in_bindings": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
+                            "key": "field_67718ae182b3e",
+                            "label": "Standard Inclusions Header",
+                            "name": "standard_inclusions_header",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67718ac682b3d",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
+                        },
+                        {
+                            "key": "field_67718b0282b3f",
+                            "label": "Standard Inclusions Text",
+                            "name": "standard_inclusions_text",
+                            "aria-label": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_67718ac682b3d",
+                                        "operator": "!=",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 0,
+                            "rows": "",
+                            "placeholder": "",
+                            "new_lines": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "min": "",
@@ -1781,5 +1870,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1732907999
+    "modified": 1735494430
 }
