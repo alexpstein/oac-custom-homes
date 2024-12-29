@@ -16,7 +16,7 @@ if ( $use_global == false ) {
 
 <div class="std-inc module" style="background-image: url(<?php echo esc_url($bg_img['url']); ?>); background-position: <?php echo get_field('standard_inclusions_bg_img_offset_x', 'option') . '% ' . get_field('standard_inclusions_bg_img_offset_y', 'option') . '%;'; ?>">
     <div class="container-lg">
-        <div class="std-inc__wrap">
+        <div class="std-inc__wrap animate">
             <?php
             echo '<h2 class="std-inc__heading">' . $std_inc_heading . '</h2>';
             echo wpautop( $std_inc_body );
