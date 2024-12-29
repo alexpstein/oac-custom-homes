@@ -4,9 +4,10 @@
  */
 
 $prev_image = get_sub_field('image');
+$extra_padding = get_sub_field('extra_padding');
 ?>
 
-<div class="floor-plan-prev module">
+<div class="floor-plan-prev module<?php echo ( $extra_padding ) ? ' floor-plan-prev--pad' : ''; ?>">
     <div class="container-lg">
         <div class="floor-plan-prev__flex">
             <div class="floor-plan-prev__text">
