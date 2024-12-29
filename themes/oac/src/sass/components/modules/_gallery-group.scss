@@ -65,7 +65,7 @@
 
     &__btn-label-text {
         transform: translateY(20px);
-        font-size: var(--text-size--xl);
+        font-size: var(--text-size--s);
         text-transform: none;
         transition: var(--transition--short) ease transform;
     }
@@ -90,6 +90,10 @@
 @include media-breakpoint-up(sm) {
     .gallery-group {
         --grid-gap: 16px;
+
+        &__btn-label-text {
+            font-size: var(--text-size--m);
+        }
     }
 
     .gallery__modal {
@@ -117,6 +121,10 @@
     .gallery-group {
         p {
             font-size: var(--text-size--m);
+        }
+
+        &__btn-label-text {
+            font-size: var(--text-size--xl);
         }
     }
 

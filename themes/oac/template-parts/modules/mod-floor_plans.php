@@ -20,7 +20,7 @@ if ( have_rows('floor_plans') ) :
                 $fp_img_2x = get_sub_field('plan_image_2x');
                 $i++;
             ?>
-            <div class="floor-plans__card">
+            <div class="floor-plans__card animate">
                 <?php if ( $i > 1 ) echo '<hr class="hr-alt">'; ?>
                 <h2 class="floor-plans__name"><?php echo esc_html( $floor_plan_name ); ?></h2>
                 <p class="floor-plans__location"><?php echo get_field('location', $floor_plan_id ); ?></p>

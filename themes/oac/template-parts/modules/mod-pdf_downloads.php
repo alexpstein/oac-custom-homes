@@ -5,7 +5,7 @@
 ?>
 
 <div class="pdf-dl module">
-    <div class="container-lg">
+    <div class="container-lg animate">
         <div class="row">
             <div class="col-12">
                 <?php

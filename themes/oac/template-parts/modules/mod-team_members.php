@@ -6,33 +6,35 @@
 
 <div class="team module">
     <div class="container-lg">
-        <hr>
-        <?php
-        if ( ! empty( get_sub_field('title') ) ) echo '<h2 class="team__title">' . get_sub_field('title') . '</h2>';
-        if ( ! empty( get_sub_field('text') ) ) echo wpautop( get_sub_field('text') );
-        $team_members = get_sub_field('team_members');
-        if ( $team_members ) :
-            $i = 0;
-        ?>
-        <div class="team__flex">
-        <?php
-        foreach( $team_members as $team ) :
-            setup_postdata( $team );
-            $team_id = $team->ID;
-            $i++;
-        ?>
-            <div class="team__card">
-                <button class="team__btn" data-bs-toggle="modal" data-bs-target="#team-modal-<?php echo $i; ?>" aria-label="<?php echo sprintf( __( 'Open dialog for more about %s', '_themename' ), get_the_title( $team_id ) ); ?>">
-                    <span class="team__img-wrap<?php if ( get_field( 'add_border', $team_id ) ) echo ' team__img-wrap--border'; ?>">
-                        <?php echo get_the_post_thumbnail( $team_id ); ?>
-                    </span>
-                    <p class="team__name"><?php echo get_the_title( $team_id ); ?></p>
-                </button>
+        <div class="team__text-wrap animate">
+            <hr>
+            <?php
+            if ( ! empty( get_sub_field('title') ) ) echo '<h2 class="team__title highlight-only">' . get_sub_field('title') . '</h2>';
+            if ( ! empty( get_sub_field('text') ) ) echo wpautop( get_sub_field('text') );
+            $team_members = get_sub_field('team_members');
+            if ( $team_members ) :
+                $i = 0;
+            ?>
+            <div class="team__flex">
+            <?php
+            foreach( $team_members as $team ) :
+                setup_postdata( $team );
+                $team_id = $team->ID;
+                $i++;
+            ?>
+                <div class="team__card animate">
+                    <button class="team__btn" data-bs-toggle="modal" data-bs-target="#team-modal-<?php echo $i; ?>" aria-label="<?php echo sprintf( __( 'Open dialog for more about %s', '_themename' ), get_the_title( $team_id ) ); ?>">
+                        <span class="team__img-wrap<?php if ( get_field( 'add_border', $team_id ) ) echo ' team__img-wrap--border'; ?>">
+                            <?php echo get_the_post_thumbnail( $team_id ); ?>
+                        </span>
+                        <p class="team__name"><?php echo get_the_title( $team_id ); ?></p>
+                    </button>
+                </div>
+            <?php
+            endforeach;
+            wp_reset_postdata();
+            ?>
             </div>
-        <?php
-        endforeach;
-        wp_reset_postdata();
-        ?>
         </div>
         <?php
         endif;

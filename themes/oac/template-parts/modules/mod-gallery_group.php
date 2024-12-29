@@ -6,9 +6,13 @@
 
 <div class="gallery-group module">
     <div class="container-lg">
+        <div class="animate">
+            <?php
+            if ( ! empty( get_sub_field('heading') ) ) echo '<h2 class="gallery-group__heading highlight-only">' . get_sub_field('heading') . '</h2>';
+            if ( ! empty( get_sub_field('body_text') ) ) echo wpautop( get_sub_field('body_text') );
+            ?>
+        </div>
         <?php
-        if ( ! empty( get_sub_field('heading') ) ) echo '<h2 class="gallery-group__heading">' . get_sub_field('heading') . '</h2>';
-        if ( ! empty( get_sub_field('body_text') ) ) echo wpautop( get_sub_field('body_text') );
         if ( have_rows('galleries') ) :
             $i = 0;
         ?>
@@ -19,7 +23,7 @@
                 $images = get_sub_field('gallery');
                 $i++;
             ?>
-                <li class="gallery-group__li">
+                <li class="gallery-group__li animate">
                     <button type="button" class="gallery-group__btn" data-bs-toggle="modal" data-bs-target="#gallery-modal-<?php echo $i; ?>"  aria-label="<?php echo sprintf( __( 'View gallery for %s', '_themename' ), $gallery_name ); ?>">
                         <div class="gallery-group__btn-label">
                             <span class="gallery-group__btn-label-text"><?php echo get_sub_field('gallery_title'); ?></span>

@@ -6,7 +6,7 @@
 ?>
 
 <div class="gallery module">
-    <div class="container-lg">
+    <div class="container-lg animate">
         <hr>
         <h2 class="gallery__title"><?php echo get_sub_field('gallery_title'); ?></h2>
         <?php
@@ -15,7 +15,7 @@
         ?>
     </div>
 </div>
-<div class="gallery__container">
+<div class="gallery__container animate">
     <div class="gallery__slick">
         <?php
         foreach( $images as $img ):

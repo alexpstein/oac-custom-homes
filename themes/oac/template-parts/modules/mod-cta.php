@@ -11,7 +11,7 @@ if ( !empty( get_sub_field('y_pos')) ) $bg_pos_y = get_sub_field('y_pos');
 ?>
 
 <div class="cta module<?php if ( get_sub_field('reset_bg_pos') ) echo ' cta--bg-reset'; ?>" style="background-image: url(<?php echo esc_url( $bg_img['url'] ); ?>); background-position: <?php echo $bg_pos_x . '% ' . $bg_pos_y . '%;'; ?>">
-    <div class="container-lg">
+    <div class="container-lg animate">
         <div class="cta__content">
             <h2 class="cta__heading"><?php echo get_sub_field('heading'); ?></h2>
             <?php echo wpautop( get_sub_field('text') ); ?>

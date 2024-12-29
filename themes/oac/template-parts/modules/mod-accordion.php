@@ -22,7 +22,7 @@ $accordion_name = 'accordion-'.$accordion_num;
                         $show = false;
                         if ( $accordion_i == 1 ) $show = true;
                     ?>
-                    <div class="accordion__item">
+                    <div class="accordion__item animate">
                         <h2 class="accordion__heading">
                             <button class="accordion-button accordion__btn <?php if ( !$show ) echo 'collapsed'; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<?php echo $accordion_i; ?>" aria-expanded="<?php echo ( $show ) ? 'true' : 'false'; ?>" aria-controls="collapse-<?php echo $accordion_i; ?>">
                                 <span class="accordion__btn-text"><?php echo get_sub_field('heading'); ?></span>
