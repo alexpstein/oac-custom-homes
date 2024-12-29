@@ -1,0 +1,55 @@
+h2.highlight,
+h2.highlight-two {
+    display: inline;
+    text-decoration: none;
+    background-image: linear-gradient(var(--color--lgold), var(--color--lgold));
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 4px;
+    transition: .7s ease-in background-size 1s;
+
+    &.animated {
+        background-size: 100% 4px;
+    }
+}
+
+h2.highlight-two {
+    position: relative;
+    transition: background-size .7s ease-in .35s, top .35s ease-in, opacity .7s ease-in;
+
+    &.animate {
+        top: 10px;
+
+        &.animated {
+            top: 0;
+        }
+    }
+}
+
+.animate {
+    display: inline-block;
+    position: relative;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .35s ease-in all;
+
+    &.animated {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.no-js {
+    .animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    h2.highlight {
+        background-size: 100% 4px;
+    }
+    
+    h2.highlight-two.animate {
+        top: 0;   
+    }
+}
