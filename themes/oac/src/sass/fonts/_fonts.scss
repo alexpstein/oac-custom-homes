@@ -29,6 +29,17 @@
 }
 
 @font-face {
+    font-family: 'Roboto';
+    src: url('../../fonts/Roboto-MediumItalic.woff2') format('woff2'),
+        url('../../fonts/Roboto-MediumItalic.woff') format('woff'),
+        url('../../fonts/Roboto-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+
+}
+
+@font-face {
     font-family: 'Allrounder Monument';
     src: url('../../fonts/AllrounderMonument-Medium.woff2') format('woff2'),
         url('../../fonts/AllrounderMonument-Medium.woff') format('woff'),
