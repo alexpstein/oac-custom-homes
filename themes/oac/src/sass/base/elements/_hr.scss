@@ -16,3 +16,13 @@ hr.hr-alt {
 hr.hr-none {
 	display: none;
 }
+
+hr.home-hr {
+	margin: 2.5em auto;
+}
+
+@include media-breakpoint-up(lg) {
+	hr.home-hr {
+		margin: 3.25em auto 3em;
+	}
+}
