@@ -65,7 +65,9 @@
 
     &__btn-label-text {
         transform: translateY(20px);
-        font-size: var(--text-size--s);
+        color: var(--color--text);
+        font-size: var(--text-size--xs);
+        font-family: var(--font--alt);
         text-transform: none;
         transition: var(--transition--short) ease transform;
     }
@@ -124,7 +126,7 @@
         }
 
         &__btn-label-text {
-            font-size: var(--text-size--xl);
+            font-size: var(--text-size--m);
         }
     }
 
@@ -132,6 +134,14 @@
         .gallery__modal-btn {
             flex-basis: 100px;
             margin: 0 .75rem .75rem 0;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .gallery-group {
+        &__btn-label-text {
+            font-size: var(--text-size--l);
         }
     }
 }
