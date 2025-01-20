@@ -17,7 +17,7 @@ if ( $use_global == false ) {
 <div id="contact" class="contact-form module <?php if ( $reduce_top_padding ) echo 'contact-form--pt0'; ?>">
     <div class="container-lg">
         <div class="row">
-            <div class="col-12 animate">
+            <div class="col-12">
                 <hr class="hr-<?php echo get_sub_field('divider_style'); ?>">
                 <div class="contact-form__text-wrap">
                     <?php
