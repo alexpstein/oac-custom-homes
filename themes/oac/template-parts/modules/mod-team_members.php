@@ -43,6 +43,8 @@
             foreach( $team_members as $team ) :
                 setup_postdata( $team );
                 $team_id = $team->ID;
+                $phone_no_spaces = str_replace( ' ', '', get_field( 'phone_number', $team_id ) );
+                $phone_link = _themename_clean_string( $phone_no_spaces );
                 $i++;
         ?>
             <div class="modal fade team__dialog" id="team-modal-<?php echo $i; ?>" aria-labelledby="team-member-<?php echo $i; ?>" tabindex="-1" aria-hidden="true">
@@ -65,7 +67,7 @@
 									<?php echo file_get_contents( get_template_directory_uri() . '/dist/images/icon-phone.svg' ); ?>
 								</div>
 								<div class="team__phone-text">
-									<?php echo wpautop( get_field( 'phone_number', $team_id ) ); ?>
+									<?php echo '<p><a href="tel:' . $phone_link . '">' . get_field( 'phone_number', $team_id ) . '</a></p>'; ?>
 								</div>
 							</div>
                             <div class="team__email">
