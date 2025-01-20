@@ -18,14 +18,19 @@
     }
     
     &__btn {
-        background-color: #e4e4e4;
-        border-color: #e4e4e4;
+        background-color: var(--color--gold);
+        border-color: var(--color--gold);
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         text-align: left;
         width: 100%;
+
+        &.collapsed {
+            background-color: #e4e4e4;
+            border-color: #e4e4e4;
+        }
     }
 
     &__btn-text {
