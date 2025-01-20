@@ -223,17 +223,13 @@
 @include media-breakpoint-up(xl) {
     .gallery {
         &__container {
-            max-width: 1100px;
+            max-width: 968px;
         }
     }
 }
 
 @media screen and (min-width: 1440px) {
     .gallery {
-        &__container {
-            max-width: 1340px;
-        }
-
         &__inner-wrapper {
             margin: 2rem auto;
             max-height: calc(950px - 4rem);
