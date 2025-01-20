@@ -246,7 +246,7 @@
 
 			&.active {
 				display: block;
-				transform: translateY(0);
+				transform: translateY(2px);
 				transition: .25s ease transform, .25s ease opacity;
 				left: 0;
 				opacity: 1;
