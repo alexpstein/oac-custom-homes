@@ -5,11 +5,11 @@ h2.highlight-two {
     background-image: linear-gradient(var(--color--lgold), var(--color--lgold));
     background-position: 0% 100%;
     background-repeat: no-repeat;
-    background-size: 0% 4px;
+    background-size: 0% 3px;
     transition: .7s ease-in background-size 1s;
 
     &.animated {
-        background-size: 100% 4px;
+        background-size: 100% 3px;
     }
 }
 
@@ -32,11 +32,11 @@ h2.highlight-two {
     background-image: linear-gradient(var(--color--lgold), var(--color--lgold));
     background-position: 0% 100%;
     background-repeat: no-repeat;
-    background-size: 0% 4px;
+    background-size: 0% 3px;
     transition: .7s ease-in background-size .35s;
     
     &.animated {
-        background-size: 100% 4px;
+        background-size: 100% 3px;
     }
 }
 
@@ -64,7 +64,7 @@ h2.highlight-two {
 
     .highlight-only,
     h2.highlight {
-        background-size: 100% 4px;
+        background-size: 100% 3px;
     }
     
     h2.highlight-two.animate {
