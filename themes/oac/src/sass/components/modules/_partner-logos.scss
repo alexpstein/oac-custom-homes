@@ -28,8 +28,22 @@
     }
 }
 
+@include media-breakpoint-only(xs) {
+    .partner-logos {
+        &__logo:first-of-type {
+            padding-right: 1rem;
+        }
+    }
+}
+
 @include media-breakpoint-up(sm) {
     .partner-logos {
+        padding: 1em 0 .75em;
+
+        &__heading {
+            margin-bottom: 0;
+        }
+
         &__flex {
             max-width: 550px;
         }
