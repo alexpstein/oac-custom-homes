@@ -60,13 +60,17 @@
     }
 
     &__img-container {
-        overflow: scroll;
+        // overflow: scroll;
         max-height: calc(100vh - var(--wp-admin--admin-bar--height, 0px) - 100px);
+        max-width: 100vw;
+        display: flex;
+        justify-content: center;
     }
 
     &__img-full {
-        width: 100%;
+        width: auto;
         max-width: 100%;
+        object-fit: contain;
     }
 }
 
