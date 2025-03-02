@@ -18,6 +18,9 @@ Custom theme for OAC Custom Homes site
 
 == Changelog ==
 
+= 1.0.0 - March 2 2025 =
+* Initial complete build of theme for site launch
+
 = 0.1.0 - October 13 2024 =
 * Initial theme configuration for development
 
